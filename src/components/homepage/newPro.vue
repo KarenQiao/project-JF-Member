@@ -5,7 +5,7 @@
 
     <div class="title member_between_center">
       <span>主编推荐</span>
-      <a>更多</a>
+      <a  @click="$router.push('/newProduct')">更多</a>
     </div>
 
     <div class="pro_list">

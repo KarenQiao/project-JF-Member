@@ -3,7 +3,7 @@
 
     <div class="title member_between_center">
      <span>主编推荐</span>
-      <a>更多</a>
+      <a @click="$router.push('/editStory')">更多</a>
     </div>
 
     <div class="reccomed_list">

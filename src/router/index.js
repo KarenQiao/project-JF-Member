@@ -20,7 +20,23 @@ export default new Router({
       },
       component: resolve => require(['@/components/Login'], resolve)
     },
+    {
+      path: '/registered',
+      name: 'registeredPage',
+      meta:{
+        title:'注册'
+      },
+      component: resolve => require(['@/page/Login/registered'], resolve)
+    },
 
+    {
+      path: '/forgetPasd',
+      name: 'forgetPasd',
+      meta:{
+        title:'忘记密码'
+      },
+      component: resolve => require(['@/page/Login/forgetPasd'], resolve)
+    },
     {
       path:'/homepage',
       name:'首页',

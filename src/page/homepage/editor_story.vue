@@ -41,12 +41,15 @@
         </div>
       </div>
     </div>
+    <back-home></back-home>
   </div>
 
 </template>
 
 <script>
   import editorStory from '../../components/homepage/reccomed.vue'
+
+  import backHome from '../../components/backHome.vue'
 
   export default {
 
@@ -61,7 +64,8 @@
 
     components:{
 
-      'editorStory':editorStory
+      'editorStory':editorStory,
+      'backHome':backHome
 
     }
 
