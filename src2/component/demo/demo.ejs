@@ -1,5 +1,31 @@
 
 
-<div>测试依稀</div>
 
-<p>奥斯卡的金三角谁拉的就是觉得</p>
+<div class="tabChangeArea">
+
+  <div class="tabBtn">
+    <span class="showTab">模块一</span>
+    <span>模块二</span>
+    <span>模块三</span>
+    <a class="moreTab">更多</a>
+  </div>
+
+  <div class="moveArea">
+    <div class="showArea">模块一内容</div>
+    <div>模块二内容</div>
+    <div>模块第三内容</div>
+  </div>
+
+
+</div>
+
+<script>
+
+  /*商品详情页图片滚动以及缩放*/
+  tabMoveChange.init({
+
+    "moveEle":"moveArea",//包裹所有图片的class选择器
+
+    "moveEleParent":"tabChangeArea",//包括点点以及图片的父元素，class选择器
+  });
+</script>

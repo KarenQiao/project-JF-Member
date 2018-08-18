@@ -27,7 +27,7 @@ function devJs() {
 
         .pipe(concat('common.js'))
 
-         .pipe(uglify())
+        // .pipe(uglify())
 
         .pipe(gulp.dest('static/js'))
 
@@ -39,7 +39,7 @@ function devJs() {
 
     .pipe(concat('common.js'))
 
-    .pipe(uglify())
+   // .pipe(uglify())
 
     .pipe(gulp.dest('static/js'))
 
