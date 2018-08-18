@@ -1,0 +1,73 @@
+.all_member_life{
+  background: #ffffff;
+  padding-top: 20px;
+
+
+  a.life_list{
+    display: block;
+    color: #4a4a4a;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    text-align: center;
+
+
+    p{
+      display: inline-block;
+      text-align: center;
+      font-size: 18px;
+      position: relative;
+
+      &:first-child{
+
+        &:before{
+
+          content: '';
+          width: 10px;
+          height: 25px;
+          border-right: solid 1px #f1f0f0;
+          position: absolute;
+          left: -7px;
+          top: -5px;
+          background: #fff;
+          z-index: 10;
+          transform: rotate(45deg);
+        }
+
+        &:after{
+          content: '';
+          width: 10px;
+          height: 25px;
+          border-left: solid 1px #f1f0f0;
+          position: absolute;
+          right: -8px;
+          top: 3px;
+          background: #fff;
+          z-index: 10;
+          transform: rotate(40deg);
+        }
+
+
+      }
+
+      &+p{
+        width: 100%;
+        color: #8a8a8a;
+        letter-spacing: 6px;
+        top: -4px;
+        font-size: 14px;
+        position: relative;
+      }
+      }
+    }
+
+    div{
+      width: 100%;
+      height: calc(~'(100vw - 20px)/710 * 300');
+      border-radius: 5px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+

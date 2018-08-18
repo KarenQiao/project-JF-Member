@@ -5,10 +5,12 @@ import App from './App'
 import router from './router'
 import axios from './assets/axios'
 
+import VueWechatTitle from 'vue-wechat-title'
+Vue.use(VueWechatTitle)
+
 Vue.config.productionTip = false;
 
-import VueWechatTitle from 'vue-wechat-title';
-Vue.use(VueWechatTitle)
+
 
 /* eslint-disable no-new */
 new Vue({
