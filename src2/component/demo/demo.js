@@ -58,7 +58,7 @@ let tabMoveChange={
 
     var moveEle=document.getElementsByClassName(_this.moveEle);//banner轮播图
 
-    var thisNum = moveEle[0].getElementsByTagName('div').length - 1;
+    var thisNum = moveEle[0].getElementsByTagName('a').length - 1;
 
     var thisWindowWidth = window.innerWidth;//屏幕可视窗口宽度
 
@@ -293,7 +293,7 @@ let tabMoveChange={
 
     var moveEle=document.getElementsByClassName(_this.moveEle);//包裹所有主体中的banner图片的父级元素
 
-    var thisNum =  moveEle[0].getElementsByTagName('div').length - 1;
+    var thisNum =  moveEle[0].getElementsByTagName('a').length - 1;
 
     var PointParent=document.getElementsByClassName('tabBtn');//点点的父元素
 

@@ -1,0 +1,123 @@
+
+.member_power{
+  width: 100%;
+
+  .power_top{
+    background: url("../images/power_bg.png") center no-repeat;
+    background-size: 120%;
+    text-align: center;
+    .member_logo{
+      padding-top: 15px;
+      position: relative;
+      display: inline-block;
+
+      >span{
+
+        position: absolute;
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+        top: 12px;
+        left: -11px;
+        background: url("../images/grade_bg_light.png") center no-repeat;
+        background-size: 100%;
+        animation: rotateFn 6s ease-in-out;
+
+      }
+
+      @keyframes rotateFn
+      {
+        0% {transform: rotate(0)}
+
+        100% {transform: rotate(360deg)}
+      }
+
+
+      img{
+        width: 55px;
+        position: relative;
+        z-index: 10;
+      }
+    }
+
+    >p{
+      text-align: center;
+
+      &+p{
+      padding-bottom: 10px;
+        color: #ffffff;
+        font-size: 12px;
+      }
+
+    }
+  }
+
+  .more_rule{
+
+    display: block;
+    text-align: center;
+    padding: 12px 0;
+    color: #4a4a4a;
+  }
+  .power_list{
+
+    background: #ffffff;
+    flex-wrap: wrap;
+
+    a{
+      display: inline-block;
+      width: 33.33%;
+     // flex: 1;
+      text-align: center;
+      color: #4a4a4a;
+      padding: 15px 10px;
+      box-sizing: border-box;
+      border-bottom: solid 1px #f1f0f0;
+
+
+      &:nth-child(3n-1){
+
+        border-left: solid 1px #f1f0f0;
+
+        border-right: solid 1px #f1f0f0;
+
+      }
+
+      img{
+        width: 45px;
+        height: 45px;
+      }
+
+      &.locked{
+        position: relative;
+
+        &:after{
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-width: 0 38px 38px 0;
+          border-style: solid;
+          border-color: transparent #ddd transparent transparent;
+
+        }
+
+        &:before{
+          content: '';
+          width: 28px;
+          height: 28px;
+          background: url(../images/icon_locking.png) center no-repeat;
+          background-size: 100%;
+          position: absolute;
+          top: -2px;
+          right: -5px;
+          z-index: 10;
+
+        }
+
+      }
+    }
+
+  }
+
+}

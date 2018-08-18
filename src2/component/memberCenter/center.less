@@ -1,0 +1,89 @@
+.Jf_Member_Homepage.jf_Member_center{
+
+  .member_top {
+    width: 100%;
+    margin: 0;
+    padding:25px;
+    background: url('../images/center_bg.png') center no-repeat;
+    background-size: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+    .member_right img {
+      width: 48px;
+      top: 5px;
+    }
+    .member_right .bg_light {
+      width: 84px;
+      height: 84px;
+      top: -3px;
+      left: -18px;
+    }
+
+  }
+
+  .center_list{
+
+    background: #ffffff;
+    margin-top: 10px;
+
+    >a{
+      width: 100%;
+      padding: 15px;
+      color: #4a4a4a;
+      box-sizing: border-box;
+      position: relative;
+
+      &:active{
+        opacity: 0.7;
+      }
+
+      &:last-child{
+
+        border-bottom: none;
+      }
+
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        width: calc(100vw - 30px);
+        border-bottom: solid 1px #dddddd;
+        transform: scaleY(0.6);
+      }
+
+      &:after{
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url("../images/icon_go.png") center no-repeat;
+        background-size: 100%;
+        position: absolute;
+        right: 15px;
+        top: 19px;
+
+      }
+
+
+      >p{
+
+        img{
+          width: 28px;
+          height: 28px;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+
+
+        &+p{
+          color: #ababab;
+          position: relative;
+          right: 20px;
+        }
+      }
+    }
+
+  }
+}

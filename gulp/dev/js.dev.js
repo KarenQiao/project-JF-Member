@@ -21,7 +21,7 @@ function devJs() {
 
     //主要依赖模块
 
-    gulp.src(['src2/basic/*.js'])
+    gulp.src(['src2/basic/**/*.js','src2/component/**/*.js'])
 
          .pipe(babel())
 
@@ -33,7 +33,7 @@ function devJs() {
 
         .pipe(connect.reload());
 
-  gulp.src(['src2/component/**/*.js'])
+/*  gulp.src(['src2/component/!**!/!*.js'])
 
     .pipe(babel())
 
@@ -43,19 +43,19 @@ function devJs() {
 
     .pipe(gulp.dest('static/js'))
 
-    .pipe(connect.reload());
+    .pipe(connect.reload());*/
 
-    gulp.src(['src2/lib/js/*.*'])
+   /* gulp.src(['src2/lib/js/!*.*'])
 
         .pipe(gulp.dest('static/js'))
 
         .pipe(connect.reload());
 
-    gulp.src(['src2/api/**/*.*'])
+    gulp.src(['src2/api/!**!/!*.*'])
 
         .pipe(gulp.dest('static/api'))
 
-        .pipe(connect.reload());
+        .pipe(connect.reload());*/
 }
 
 module.exports = devJs;
