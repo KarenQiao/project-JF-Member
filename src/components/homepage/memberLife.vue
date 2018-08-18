@@ -13,7 +13,7 @@
         <span class="showTab">亲密时光</span>
         <span>出游度假</span>
         <span>潮流风向</span>
-        <a class="moreTab">更多</a>
+        <a class="moreTab" @click="$router.push('/memberLife')">更多</a>
       </div>
 
       <div class="moveArea ">
