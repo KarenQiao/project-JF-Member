@@ -18,7 +18,7 @@ export default new Router({
       meta:{
         title:'登录'
       },
-      component: resolve => require(['@/components/Login'], resolve)
+      component: resolve => require(['@/page/Login/Login'], resolve)
     },
     {
       path: '/registered',
