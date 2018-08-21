@@ -16,7 +16,7 @@
 
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_locked.png"></span>
-        <input type="password" placeholder="请设置密码"/>
+        <input type="password" placeholder="请输入薪密码"/>
       </label>
 
       <label class="member_left_center">
@@ -26,7 +26,7 @@
 
 
       <div>
-        <button class="go_register">立即注册</button>
+        <button class="go_register">确认</button>
       </div>
     </div>
   </div>
@@ -35,6 +35,6 @@
 
 <script>
   export default {
-    name:'registered'
+    name:'accountSafety'
   }
 </script>

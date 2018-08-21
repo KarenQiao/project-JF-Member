@@ -38,10 +38,11 @@
 
       <a class="member_between_center">
         <p><img src="../../../static/images/icon_mine_address.png"><span>地址管理</span></p>
+        <p class="gray_text">等待开放中</p>
 
       </a>
 
-      <a class="member_between_center">
+      <a class="member_between_center" @click="$router.push('/accountSafety')">
         <p><img src="../../../static/images/icon_mine_security.png"><span>账户安全</span></p>
 
       </a>

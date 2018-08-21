@@ -23,6 +23,11 @@
       <div>
         <button class="go_register" @click="$router.push('/homepage')" >登录</button>
       </div>
+
+      <div class="member_between_center login_help">
+        <a @click="$router.push('/registered')">立即注册</a>
+        <a  @click="$router.push('/forgetPasd')">忘记密码？</a>
+      </div>
     </div>
 
 
