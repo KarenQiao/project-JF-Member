@@ -45,6 +45,10 @@
 
     <member-footer :showObj="[true,false,false]"></member-footer>
 
+    <coupons-box></coupons-box>
+
+    <active-box></active-box>
+
   </div>
 
 
@@ -65,6 +69,10 @@
 
   import newProduct from '../../components/homepage/newPro.vue'
 
+  import couponsBox from '../../components/homepage/coupons.vue'
+
+  import activeBox from '../../components/homepage/activeBox.vue'
+
   import memberFooter from '../../components/footer.vue'
 
   export default {
@@ -83,14 +91,27 @@
       'memberLife':memberLife,
       'editStory':editorStory,
       'newProduct':newProduct,
-      'memberFooter':memberFooter
+      'memberFooter':memberFooter,
+      'couponsBox':couponsBox,
+      'activeBox':activeBox
     },
 
-    mounted(){
+    beforeRouteLeave (to, from, next) {
 
-      //jfAutoPlay.jfCarouselInit();//轮播
+      console.log(this);
 
-    }
+      jfAutoPlay.jfAutoPlayStop();
+
+      next()
+
+    },
+
+  mounted(){
+
+      jfAutoPlay.jfCarouselInit();//轮播
+
+    },
+
   }
 
 </script>

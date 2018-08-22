@@ -3,13 +3,15 @@
  * 2016.12.27*/
 var jfAutoPlay = {
 
+  setInterMove1000:0,
+
   jfAutoPlayInit: function () {
 
     var XPosition = 0;                                                                                             //存储第一个手指x轴位置，需刷新
 
     var isChange = 0;                                                                                              //判断是否往哪里移动，1后退，2前进，其他值不动，需刷新
 
-    var setInterMove1000 = 0;                                                                                      //存储循环
+   // var setInterMove1000 = 0;                                                                                      //存储循环
 
     var timer = 5000;                                                                                              //平滑过渡间隔时间
 
@@ -98,7 +100,7 @@ var jfAutoPlay = {
 
       thisAllTagA[thisAllTagA.length - 1].className = 'before delay';                                                   //最后一张为前一张
 
-      setInterMove1000 = setInterval(jfAutoPlayRight, timer);//页面读取后开始轮播
+      jfAutoPlay.setInterMove1000 = setInterval(jfAutoPlayRight, timer);//页面读取后开始轮播
 
       document.getElementsByClassName('jf_homepage_autoplay')[0].addEventListener('touchstart', jfAutoStart, false);//添加touchstrat事件
 
@@ -126,7 +128,7 @@ var jfAutoPlay = {
 
       jfAddEvent();                                                                                    //添加move 和 end 事件
 
-      setInterMove1000 = setInterval(jfAutoPlayTwoAll, timer);//页面读取后开始轮播
+      jfAutoPlay.setInterMove1000 = setInterval(jfAutoPlayTwoAll, timer);//页面读取后开始轮播
 
     }
     else {//默认一张不动
@@ -168,7 +170,7 @@ var jfAutoPlay = {
         event.preventDefault();
       }                                                                                     //禁止页面滚动
 
-      clearInterval(setInterMove1000);                                                      //触摸开始时，停下循环轮播
+      clearInterval(jfAutoPlay.setInterMove1000);                                                      //触摸开始时，停下循环轮播
 
       XPosition = lastStance = event.touches[0].clientX;              //预设第一次触摸点和最后一次触摸点
 
@@ -506,11 +508,11 @@ var jfAutoPlay = {
 
       if (isThreeEle) {//三个元素以上的情况
 
-        setInterMove1000 = setInterval(jfAutoPlayRight, timer);//加轮播循环
+        jfAutoPlay.setInterMove1000 = setInterval(jfAutoPlayRight, timer);//加轮播循环
 
       }
       else {//三个元素以下的情况
-        setInterMove1000 = setInterval(jfAutoPlayTwoAll, timer);//开始轮播
+        jfAutoPlay.setInterMove1000 = setInterval(jfAutoPlayTwoAll, timer);//开始轮播
       }
 
       isChange = XPosition = lastStance = 0;    //初始化动态值
@@ -957,25 +959,31 @@ var jfAutoPlay = {
 
     }
 
-
     function addTransition(ele,fn) {
 
       ele.addEventListener('transitionend', fn);                                  //移除平滑过渡
 
       ele.addEventListener('webkitTransitionEnd', fn);
 
-    }
+    };
 
   },
 
+  jfAutoPlayStop:function () {
+
+   // window.addEventListener("hashchange",function () {
+      clearInterval(jfAutoPlay.setInterMove1000)
+   // }, false);
+
+  },
 
   jfCarouselInit: function () {                                                                                   //初始化
 
-    window.addEventListener('load', function () {
+  //  window.addEventListener('load', function () {
 
       jfAutoPlay.jfAutoPlayInit();
 
-    });
+   // });
 
   }
 

@@ -7,7 +7,9 @@ let qs = require('qs');
 
 let axiosHttp={
 
-  login:process.env.API_ROOT+'jx/action/login',
+  login:process.env.API_ROOT+'v3/hyvip/goodsRest/listBanner',
+
+  //http://116.62.199.212:7988/v3/hyvip/goodsRest/listBanner
 
   getFn:(url,params)=>{
 

@@ -31,7 +31,7 @@
 
       </a>
 
-      <a class="member_between_center">
+      <a class="member_between_center" @click="$router.push('/order')">
         <p><img src="../../../static/images/icon_mine_order.png"><span>我的订单</span></p>
 
       </a>

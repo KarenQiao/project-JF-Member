@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-wechat-title": "^2.0.4"
@@ -71,7 +73,6 @@
     "gulp-rev": "^7.1.2",
     "gulp-uglify": "^3.0.0",
     "imagemin-pngquant": "^5.0.0"
-
   },
   "engines": {
     "node": ">= 6.0.0",
