@@ -37,6 +37,15 @@ export default new Router({
       },
       component: resolve => require(['@/page/Login/forgetPasd'], resolve)
     },
+
+    {
+      path: '/accountSafety',
+      name: 'accountSafety',
+      meta:{
+        title:'账户安全'
+      },
+      component: resolve => require(['@/page/Login/accountSafety'], resolve)
+    },
     {
       path:'/homepage',
       name:'首页',
@@ -93,6 +102,16 @@ export default new Router({
         title:'会员中心'
       },
       component:resolve=>require(['@/page/personCenter/center'],resolve)
+
+    },
+
+    {
+      path:'/order',
+      name:'订单',
+      meta:{
+        title:'订单'
+      },
+      component:resolve=>require(['@/page/personCenter/order'],resolve)
 
     }
 

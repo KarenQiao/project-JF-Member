@@ -44,6 +44,16 @@
 
     },
 
+/*
+    beforeRouteLeave (to, from, next) {
+
+    console.log(to);
+
+      console.log(this);
+
+    },
+*/
+
 
   }
 
