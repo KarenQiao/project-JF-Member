@@ -20,14 +20,6 @@ var gulp = require('gulp'),
      rev = require('gulp-rev');//文件指纹
 
 
-var through = require('through2');
-
-var file_name;
-
-var last_file_name = 0;
-
-
-
 
 function devLess() {
 
@@ -45,15 +37,6 @@ function devLess() {
         }))
 
         .pipe(concat('common.css'))
-
-        .pipe(minifyCss())
-
-        .pipe(gulp.dest('static/css'))
-
-        .pipe(connect.reload());
-
-
-    gulp.src(['src2/lib/css/*.css'])
 
         .pipe(minifyCss())
 

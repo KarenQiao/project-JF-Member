@@ -7,9 +7,9 @@ module.exports = {
 
         root: 'static',//目录
 
-        //host: "172.18.1.245",//ip
+       // host: "172.18.1.19",//ip
 
-        port: 265,//端口
+        port: 115,//端口
 
         livereload: true//是否支持实时刷新
 
