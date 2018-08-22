@@ -21,7 +21,7 @@
       </label>
 
       <div>
-        <button class="go_register" @click="$router.push('/homepage')" >登录</button>
+        <button class="go_register" @click="loginFn" >登录</button>
       </div>
 
       <div class="member_between_center login_help">
