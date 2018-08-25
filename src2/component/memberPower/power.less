@@ -121,3 +121,170 @@
   }
 
 }
+
+//会员所有权限
+.card_plate {
+  margin: 15px;
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 120px;
+    height: 120px;
+    left: -25px;
+    bottom: -50px;
+    background-image: url("../images/img_bottom_left.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    right: -30px;
+    top: -45px;
+    background-image: url("../images/img_top_right.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  p {
+    color: #4a4a4a;
+    position: relative;
+    z-index: 2;
+
+    &:first-child {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    &:last-child {
+      font-size: 14px;
+    }
+
+  }
+
+}
+
+.img_plate {
+  position: absolute;
+  right: 25px;
+  bottom: 0;
+  width: 110px;
+  height: 110px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.parts_details {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #ffffff;
+}
+
+.parts_details_plate {
+  margin: 0 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.icon_plate {
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  margin-right: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.parts_details_font {
+  width: 85%;
+}
+
+.parts_details_title {
+  color: #4a4a4a;
+  font-size: 16px;
+  font-weight: bold;
+
+  @media (max-width: 320px) {
+    font-size: 14px;
+  }
+
+}
+
+.more_details_font {
+  color: #4a4a4a;
+  font-size: 14px;
+
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
+
+}
+
+//会员等级说明
+.table_plate {
+  width: 100%;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #4a4a4a;
+
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
+
+  tr {
+    &:first-child {
+      background-color: #f4f4f4;
+    }
+
+    th {
+      padding: 5px 10px;
+      text-align: center;
+      border: 1px #dddddd solid;
+      border-top: 1px #dddddd solid;
+      border-right: none;
+
+      &:last-child {
+        border-right: 1px #dddddd solid;
+      }
+
+    }
+
+    td {
+      padding: 5px 10px;
+      text-align: center;
+      border: 1px #dddddd solid;
+      border-top: none;
+      border-right: none;
+
+      &:last-child {
+        border-right: 1px #dddddd solid;
+      }
+
+    }
+  }
+}
+
