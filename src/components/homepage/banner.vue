@@ -3,27 +3,26 @@
   <div class="jf_homepage_autoplay">
 
     <div class="jf_autoplay_images">
-      <a href="#">
 
-        <img src="../../../static/images/banner.png">
-      </a>
+      <wc-swiper v-if="bannerList.length>0">
+        <wc-slide v-for="(item,key) in bannerList" :key="key">
 
-      <a href="#">
-        <img src="../../../static/images/banner.png">
+          <a :href="item.linkActivity">
+            <img v-lazy="item.showPicturUrl">
+          </a>
+        </wc-slide>
 
-      </a>
+       <!-- <div slot="pagination"></div>
+        <div slot="arrowLeft"></div>
+        <div slot="arrowRight"></div>-->
+      </wc-swiper>
 
-      <a href="#">
-        <img src="../../../static/images/banner.png">
-      </a>
-
-      <a href="#">
-        <img src="../../../static/images/banner.png">
-      </a>
+<!--
+      <a v-for="item in bannerList" :href="item.linkActivity">
+        <img v-lazy="item.showPicturUrl">
+      </a>-->
     </div>
-    <div class="jf_pagination"></div>
-
-
+   <!-- <div class="jf_pagination"></div>-->
   </div>
 
 
@@ -40,19 +39,17 @@
 
       return{
 
+
       }
 
     },
 
-/*
-    beforeRouteLeave (to, from, next) {
+    props:{
 
-    console.log(to);
-
-      console.log(this);
-
+      bannerList:{
+        type:Array
+      }
     },
-*/
 
 
   }
@@ -60,4 +57,21 @@
 
 
 </script>
+
+<style lang="less">
+
+  .wc-slide{
+
+    position: relative;
+  }
+
+  .wc-pagination .wc-dot-active{
+    background: #bb9966;
+  }
+
+  .wc-swiper-container{
+    height: 100%;
+  }
+
+</style>
 

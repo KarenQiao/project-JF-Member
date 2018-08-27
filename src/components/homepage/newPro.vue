@@ -4,36 +4,42 @@
   <div class="new_product normal_title">
 
     <div class="title member_between_center">
-      <span>主编推荐</span>
-      <a  @click="$router.push('/newProduct')">更多</a>
+      <span>新品快抢</span>
+      <a  @click="$router.push('/newProduct/'+goodId)">更多</a>
     </div>
 
     <div class="pro_list">
 
-      <div class="single_pro member_between_center">
+      <a class="single_pro member_between_center" v-for="item in newPro.slice(0,1)">
 
         <div>
-          <p class="pro_name">电子血压测量机一体机</p>
-          <p class="pro_tips">嘉会员专享</p>
-          <p class="price"><span>￥80.00</span>+<span>888积分</span></p>
+          <p class="pro_name">{{item.commodityName}}</p>
+          <p class="pro_tips">{{item.label}}</p>
+          <p class="price"><span>{{item.price}}</span></p>
         </div>
 
         <div class="pro_pic">
-          <img src="../../../static/images/pro1.png">
+          <img v-lazy="item.theFigureUrl">
         </div>
 
 
-      </div>
+      </a>
 
       <div class="all_pro member_left_center">
 
-        <a >
-          <p><img src="../../../static/images/pro2.png"></p>
-          <p class="pro_title">医用消毒纸巾</p>
-          <p class="golden_text">888积分</p>
+        <a v-for="item in newPro.slice(1,4)" :href="item.url">
+          <p><img v-lazy="item.theFigureUrl"></p>
+          <p class="pro_title">{{item.commodityName}}</p>
+          <p class="golden_text">{{item.price}}</p>
         </a>
 
-        <a >
+       <!-- <a >
+          <p><img src="../../../static/images/pro2.png"></p>
+          <p class="pro_title">医用消毒纸巾医用消毒纸巾</p>
+          <p class="golden_text">888积分</p>
+        </a>-->
+
+       <!-- <a >
           <p><img src="../../../static/images/pro2.png"></p>
           <p class="pro_title">医用消毒纸巾医用消毒纸巾</p>
           <p class="golden_text">888积分</p>
@@ -43,7 +49,7 @@
           <p><img src="../../../static/images/pro2.png"></p>
           <p class="pro_title">医用消毒纸巾</p>
           <p class="golden_text">888积分</p>
-        </a>
+        </a>-->
 
 
 
@@ -56,6 +62,25 @@
 
 <script>
   export default {
-    name:'newProduct'
+    name:'newProduct',
+
+    data(){
+      return{
+
+      }
+    },
+
+    props:{
+
+      newPro:{
+        type: Array,
+      },
+
+      goodId:{
+        type:Number
+      }
+
+
+    }
   }
 </script>
