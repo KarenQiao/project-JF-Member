@@ -9,7 +9,7 @@
       <div class="member_left member_left_center">
         <p class="member_logo"><img src="../../../static/images/logo.jpg"></p>
         <p>
-          <span class="member_name">Karen Qiao</span>
+          <span class="member_name">{{mobileNo}}</span>
           <span class="member_score">568积分</span>
         </p>
       </div>
@@ -21,15 +21,15 @@
 
     </div>
 
-    <banner></banner>
+    <banner :bannerList="bannerList"></banner>
 
-    <cheap-product></cheap-product>
+    <cheap-product :cheapPro="cheapProList" :proTitle="cheapProTitle"></cheap-product>
 
-    <member-life></member-life>
+    <member-life :lifeList="lifeList" :lifeTitle="lifeTitle"></member-life>
 
-    <edit-story></edit-story>
+    <edit-story :editList="editList" :editId="editId"></edit-story>
 
-    <new-product></new-product>
+    <new-product :newPro="newProList" :goodId="newGoodId"></new-product>
 
     <div class="member_active normal_title">
 
@@ -38,7 +38,19 @@
       </div>
 
       <div class="active_pic">
-        <img src="../../../static/images/active1.png">
+
+        <wc-swiper v-if="activeBanner.length>0"  :autoplay="false">
+          <wc-slide v-for="(item,key) in activeBanner" :key="key">
+
+            <a>
+              <img v-lazy="item.theFigureUrl">
+            </a>
+          </wc-slide>
+
+          <!-- <div slot="pagination"></div>
+           <div slot="arrowLeft"></div>
+           <div slot="arrowRight"></div>-->
+        </wc-swiper>
       </div>
 
     </div>
@@ -75,12 +87,36 @@
 
   import memberFooter from '../../components/footer.vue'
 
+  import API from '../../assets/api'
+
   export default {
     name:'homepage',
 
     data(){
 
       return{
+
+        mobileNo:'',
+
+        bannerList:[],
+
+        cheapProTitle:{},
+
+        cheapProList:[],
+
+        lifeList:[],
+
+        lifeTitle:{},
+
+        editList:[],
+
+        editId:0,
+
+        newProList:[],
+
+        newGoodId:0,
+
+        activeBanner:[],
 
       }
     },
@@ -96,21 +132,93 @@
       'activeBox':activeBox
     },
 
-    beforeRouteLeave (to, from, next) {
-
-      console.log(this);
-
-      jfAutoPlay.jfAutoPlayStop();
-
-      next()
-
-    },
-
   mounted(){
 
-      jfAutoPlay.jfCarouselInit();//轮播
+    let userData= JSON.parse(localStorage.getItem('userData'));
+
+    this.mobileNo=userData.mobileNo;
+
+    this.getBannerList();
+
+    this.getColumn();
 
     },
+
+    methods:{
+
+      //获取banner
+      getBannerList:function () {
+
+      let params={};
+
+      API.getFn(API.listBanner,params).then(function (res) {
+
+        console.log(res);
+
+        if(res.data.code='00000'){
+
+          this.bannerList=res.data.list;
+
+        }else {
+          jfShowTips.toastShow({'text':res.data.message});
+
+          return false
+        }
+
+      }.bind(this))
+        .catch(function (error) {
+
+        }.bind(this))
+
+    },
+
+
+      //获取栏目
+      getColumn:function () {
+
+        let params={
+
+          'type':''
+        };
+
+        API.getFn(API.listColumn,params).then(function (res) {
+
+          console.log(res);
+
+          if(res.data.code='00000'){
+
+            this.cheapProTitle=res.data.list[0];
+
+            this.cheapProList=res.data.list[0].themeList[0].goodsList;
+
+            this.lifeTitle=res.data.list[1];
+
+            this.lifeList=res.data.list[1].themeList;
+
+            this.editList=res.data.list[2].themeList;
+
+            this.editId=res.data.list[2].id;
+
+            this.newProList=res.data.list[3].themeList[0].goodsList;
+
+            this.newGoodId=res.data.list[3].id;
+
+            this.activeBanner=res.data.list[4].themeList
+
+          }else {
+            jfShowTips.toastShow({'text':res.data.message});
+
+            return false
+          }
+
+        }.bind(this))
+          .catch(function (error) {
+
+          }.bind(this))
+      },
+
+
+    }
 
   }
 

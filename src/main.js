@@ -4,11 +4,26 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from './assets/axios'
+import filter from './assets/filter'
 
 import VueWechatTitle from 'vue-wechat-title'
+
+import VueLazyLoad from 'vue-lazyload'
+
+Vue.use(VueLazyLoad,{
+  error:'./static/loading_big.gif',
+  loading:'../static/images/loading_big.gif'
+})
+
+
+
 Vue.use(VueWechatTitle)
 
 Vue.config.productionTip = false;
+
+import wcSwiper from 'wc-swiper'
+import 'wc-swiper/style.css'
+Vue.use(wcSwiper);
 
 
 

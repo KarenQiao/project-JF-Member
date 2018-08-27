@@ -1,19 +1,19 @@
 <template>
   <div class="cheapProduct homepage_title">
     <div class="title">
-      <p>超值低价</p>
-      <p>ULTRA - CHEAP</p>
+      <p>{{proTitle.columnTheName}}</p>
+      <p>{{proTitle.columnViceName}}</p>
     </div>
 
     <div class="product_list member_left_center">
 
-      <a>
-        <p><img src="../../../static/images/produce_2.png"></p>
-        <p class="pro_info">全新入门亚马逊Kindle电子书</p>
-        <p class="pro_price">8888积分</p>
+      <a v-for="item in cheapPro"  :href="item.url">
+        <p><img v-lazy=item.theFigureUrl></p>
+        <p class="pro_info">{{item.commodityName}}</p>
+        <p class="pro_price">{{item.price}}</p>
       </a>
 
-      <a>
+     <!-- <a>
         <p><img src="../../../static/images/produce_2.png"></p>
         <p class="pro_info">全新入门亚马逊Kindle阅读器全新入门亚马逊Kindle电子书阅读器</p>
         <p class="pro_price">8888积分</p>
@@ -34,7 +34,7 @@
         <p><img src="../../../static/images/produce_2.png"></p>
         <p class="pro_info">全新入门亚马逊Kindle电子书阅读器全新入门亚马逊Kindle电子书阅读器</p>
         <p class="pro_price">8888积分</p>
-      </a>
+      </a>-->
 
     </div>
   </div>
@@ -51,6 +51,18 @@
 
       }
 
-    }
+    },
+
+    props:{
+
+      cheapPro:{
+        type:Array
+      },
+
+      proTitle:{
+        type:Object
+      }
+    },
+
   }
 </script>
