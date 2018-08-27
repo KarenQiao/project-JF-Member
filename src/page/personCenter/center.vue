@@ -26,7 +26,7 @@
        <p class="gray_text">等待开放中</p>
      </a>
 
-      <a class="member_between_center">
+      <a class="member_between_center" @click="$router.push('/coupons')">
         <p><img src="../../../static/images/icon_mine_voucher.png"><span>我的券包</span></p>
 
       </a>

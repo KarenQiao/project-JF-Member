@@ -9,26 +9,26 @@
       <p>当前等级：<span>太阳</span></p>
     </div>
 
-    <a class="more_rule">了解更多会员等级规则》</a>
+    <a class="more_rule" href="#/rightDetails">了解更多会员等级规则》</a>
 
     <div class="power_list member_between_center">
-     <a>
+     <a href="#/points_speed">
        <img src="../../../static/images/icon_integral_acceleration.png">
        <p>积分加速</p>
      </a>
-      <a>
+      <a href="#/points_exchange">
         <img src="../../../static/images/icon_exchange.png">
         <p>积分兑换</p>
       </a>
-      <a>
+      <a href="#/member_bag">
         <img src="../../../static/images/icon_gift.png">
         <p>会员礼包</p>
       </a>
-      <a>
+      <a href="#/upgrade_awards">
         <img src="../../../static/images/icon_upgrade_awards.png">
         <p>升级奖励</p>
       </a>
-      <a>
+      <a href="#/birthday">
         <img src="../../../static/images/icon_birthday_privileges.png">
         <p>生日特权</p>
       </a>
@@ -74,6 +74,12 @@
     components:{
 
       'memberFooter':memberFooter
+    },
+
+    mounted(){
+
+
+
     }
   }
 </script>

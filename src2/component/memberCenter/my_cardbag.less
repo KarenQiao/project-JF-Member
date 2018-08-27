@@ -1,3 +1,11 @@
+
+
+.my_order_page .order_box.card_box{
+  width: 300%;
+  background: #ffffff;
+}
+
+
 .card_bag_title {
   width: 100%;
   text-align: center;
@@ -20,6 +28,52 @@
     padding: 15px 0;
   }
 
+}
+
+.used,.dated{
+
+  .youhui_card{
+
+    &:before {
+      position: absolute;
+      content: '';
+      filter: grayscale(100%);
+
+    }
+
+
+  }
+
+  .left_bottom_font{
+    color: #ababab;
+  }
+
+  .left_top_font{
+    color: #ababab;
+  }
+  .left_top_small{
+    color: #ababab;
+  }
+
+  .card_logo_plate{
+    filter: grayscale(100%);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .status_tips{
+    position: relative;
+    top: 5px;
+    padding: 1px 8px;
+    border: solid 1px #4a4a4a;
+    border-radius: 4px;
+  }
+}
+
+.dated{
+  .card_logo_plate+.status_tips{
+    top: 3px;
+  }
 }
 
 .youhui_card {

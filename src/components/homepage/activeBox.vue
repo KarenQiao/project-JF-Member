@@ -25,7 +25,7 @@
     name:'activeBox',
 
     mounted(){
-      boxShow.checkShow('active_box');
+     // boxShow.checkShow('active_box');
     }
   }
 </script>

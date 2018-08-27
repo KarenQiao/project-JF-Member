@@ -14,6 +14,7 @@ Vue.prototype.$http.defaults.headers.post['Content-Type'] = 'application/x-www-f
 Vue.config.productionTip = false;
 
 
+/*
 
 // 请求拦截（配置发送请求的信息）
 axios.interceptors.request.use(function (config){
@@ -24,12 +25,7 @@ axios.interceptors.request.use(function (config){
 
     config.headers.Authorization = token
 
-
-  } /*else {
-
-    router.push('/')
-  }*/
-
+  }
 
   return config;
 
@@ -83,6 +79,7 @@ axios.interceptors.response.use(function (res) {
   return Promise.reject(error)
 
 })
+*/
 
 
 

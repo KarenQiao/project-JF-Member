@@ -12,12 +12,12 @@
     <div class="input_box">
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_phone.png"></span>
-        <input type="tel" placeholder="请输入电话号码"/>
+        <input type="tel" placeholder="请输入电话号码" v-model="username" />
       </label>
 
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_locked.png"></span>
-        <input type="password" placeholder="请输入密码"/>
+        <input type="password" placeholder="请输入密码" v-model="pasd" />
       </label>
 
       <div>
@@ -46,6 +46,7 @@
     data(){
 
       return{
+
         username:'',
 
         pasd:''
@@ -56,24 +57,60 @@
 
       loginFn(){
 
+        this.username=this.username.trim();
+
+        this.pasd=this.pasd.trim();
+
+        let reg=/^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
+
+        if(this.username==''){
+
+          jfShowTips.toastShow({'text':'请输入手机号码'});
+
+          return false
+
+        }else if(!reg.test(this.username)){
+
+          jfShowTips.toastShow({'text':'手机号码格式有误'});
+
+          return false;
+
+        }else if(this.pasd==''){
+
+          jfShowTips.toastShow({'text':'请输入密码'});
+
+          return false;
+        }
+
         let params={
 
-          mobile:this.username,
+          username:this.username,
 
           password:this.pasd,
-
-          code:''
 
         };
 
         API.postFn(API.login,params).then(function (res) {
 
-          console.log(res)
+          if(res.data.code='00000'){
 
-        })
+            localStorage.setItem('userData',JSON.stringify(res.data.data));
+
+            this.$router.push('/homepage')
+
+
+          }else {
+
+            jfShowTips.toastShow({'text':res.data.message});
+
+            return false
+
+          }
+
+        }.bind(this))
           .catch(function (error) {
 
-          })
+          }.bind(this))
 
       }
 
