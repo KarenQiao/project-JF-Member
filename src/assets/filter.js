@@ -29,6 +29,30 @@ Vue.filter('time',function (value) {
   return cc.toLocaleString();
 })
 
+
+//时间过滤
+Vue.filter('level',function (value) {
+
+  let result;
+
+  if(value==1){
+
+    result='星星'
+
+  }else if(value==2){
+
+    result='月亮'
+
+  }else {
+
+    result='太阳'
+  }
+
+  return result
+
+});
+
+
 filter=Vue.filter;
 
 

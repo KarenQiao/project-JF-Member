@@ -11,7 +11,7 @@
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_safety.png"></span>
         <input type="tel" placeholder="请输入验证码" maxlength="6" v-model="smsCode"/>
-        <button class="getCode" id="getCode">获取验证码</button>
+        <button class="getCode" id="getCode" @click="getCode">获取验证码</button>
       </label>
 
       <label class="member_left_center">
@@ -56,6 +56,47 @@
     },
 
     methods:{
+
+      getCode(){
+
+        let reg=/^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
+
+        if(this.mobile==''){
+
+          jfShowTips.toastShow({'text':'手机号码不能为空'});
+
+          return false
+
+        }else if(!reg.test(this.mobile)){
+
+          jfShowTips.toastShow({'text':'请输入正确的手机号'});
+
+          return false;
+
+        }
+
+        let params={
+
+          mobileNo:this.mobile
+        };
+
+        API.getFn(API.forgetMsg,params)
+
+          .then(function (res) {
+
+            if(res.data.code=='00000'){
+
+              inputFn.messageCheck(60)
+
+            }else {
+              jfShowTips.toastShow({'text':res.data.message})
+            }
+          }.bind(this))
+          .catch(function (error) {
+
+          })
+
+      },
 
       checkFn(){
 

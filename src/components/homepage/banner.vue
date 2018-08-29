@@ -4,11 +4,11 @@
 
     <div class="jf_autoplay_images">
 
-      <wc-swiper v-if="bannerList.length>0">
+      <wc-swiper v-if="bannerList.length>0" :autoplay=true>
         <wc-slide v-for="(item,key) in bannerList" :key="key">
 
           <a :href="item.linkActivity">
-            <img v-lazy="item.showPicturUrl">
+            <img v-lazy="item.showPicturUrl">d
           </a>
         </wc-slide>
 
@@ -39,6 +39,7 @@
 
       return{
 
+        autoplay:true
 
       }
 

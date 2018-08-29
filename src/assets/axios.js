@@ -14,10 +14,11 @@ Vue.prototype.$http.defaults.headers.post['Content-Type'] = 'application/x-www-f
 Vue.config.productionTip = false;
 
 
-/*
 
 // 请求拦截（配置发送请求的信息）
 axios.interceptors.request.use(function (config){
+
+  //jfShowTips.loadingShow()
 
   let token = localStorage.getItem('userToken');
 
@@ -34,8 +35,9 @@ axios.interceptors.request.use(function (config){
   return Promise.reject(error);
 });
 
-
 axios.interceptors.response.use(function (res) {
+
+ // jfShowTips.loadingRemove();
 
   return res
 
@@ -45,9 +47,11 @@ axios.interceptors.response.use(function (res) {
 
 //  jfShowTips.loadingRemove();
 
-  if(error.response.status=='405'){
+  if(error.response.status=='400'){
 
    // jfShowTips.errorShow({'text': error.response.data.msg});
+
+    console.log(error)
 
     return false
   }
@@ -60,7 +64,7 @@ axios.interceptors.response.use(function (res) {
 
   }else if(error.response.data.code=='3001'||error.response.data.code=='3003') {
 
-   // jfShowTips.errorShow({'text': error.response.data.msg});
+    jfShowTips.errorShow({'text': error.response.data.msg});
 
     localStorage.clear();
 
@@ -79,7 +83,7 @@ axios.interceptors.response.use(function (res) {
   return Promise.reject(error)
 
 })
-*/
+
 
 
 

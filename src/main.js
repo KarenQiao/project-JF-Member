@@ -11,8 +11,8 @@ import VueWechatTitle from 'vue-wechat-title'
 import VueLazyLoad from 'vue-lazyload'
 
 Vue.use(VueLazyLoad,{
-  error:'./static/loading_big.gif',
-  loading:'../static/images/loading_big.gif'
+  error:'./static/images/loading_big.jpg',
+  loading:'../static/images/loading_big.jpg'
 })
 
 
