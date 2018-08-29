@@ -1,0 +1,108 @@
+<template>
+
+  <div>
+    <div class="vip_English_banner"><img src="../../../static/images/vip_English_img/vip_English_banner.png"/></div>
+
+    <div class="vip_English_select">
+      <select class="vip_select_plate">
+        <option>请选择年龄</option>
+        <option>4岁</option>
+        <option>5岁</option>
+        <option>6岁</option>
+        <option>7岁</option>
+        <option>8岁</option>
+        <option>9岁</option>
+        <option>10岁</option>
+        <option>11岁</option>
+        <option>12岁</option>
+      </select>
+
+      <select class="vip_select_plate">
+        <option>请选择性别</option>
+        <option>男</option>
+        <option>女</option>
+      </select>
+
+      <label class="checkbox_font">
+        <input class="vip_element_radio" type="checkbox" name="radio">
+
+        <span>我已阅读并同意<a class="details_orange_font" @click="$router.push('/agreement')">VIPKID用户注册协议</a>和<a class="details_orange_font" @click="$router.push('/privacy-agreement')">用户隐私协议</a></span>
+      </label>
+
+      <a class="vip_English_btn" @click="showSuccess()">立即免费领取</a>
+    </div>
+
+    <div class="vip_English_banner"><img src="../../../static/images/vip_English_img/vip_English_01.png"/></div>
+
+    <div class="vip_English_banner"><img src="../../../static/images/vip_English_img/vip_English_02.png"/></div>
+
+    <div class="vip_img_one"><img src="../../../static/images/vip_English_img/vip_English_03.png"/></div>
+
+    <div class="vip_img_two"><img src="../../../static/images/vip_English_img/vip_English_04.png"/></div>
+
+    <div class="vip_English_banner"><img src="../../../static/images/vip_English_img/vip_English_05.png"/></div>
+
+    <div class="vip_img_three"><img src="../../../static/images/vip_English_img/vip_English_06.png"/></div>
+
+    <div class="vip_img_four"><img src="../../../static/images/vip_English_img/vip_English_07.png"/></div>
+
+    <!--礼包领取成功-->
+    <div class="none_popup">
+      <div class="receive_popup" @click="hidePopup()"></div>
+
+      <div class="success_popup_plate">
+        <div class="img_popup_plate"><img src="../../../static/images/vip_English_img/img_receive_success.png"/></div>
+
+        <div class="close_popup_btn" @click="hidePopup()"><img src="../../../static/images/vip_English_img/icon_receive_delete.png"/></div>
+      </div>
+    </div>
+  </div>
+
+</template>
+
+
+<script>
+
+  export default {
+
+    name:'',
+
+    data() {
+      return{
+      }
+    },
+
+    mounted() {
+    },
+
+    methods:{
+
+      showSuccess:function () {
+
+        var clickShow=document.getElementsByClassName('none_popup')[0];
+
+        clickShow.className = 'none_popup show_success_popup';
+
+        document.getElementsByTagName('body')[0].className = 'none_scroll';
+
+        document.getElementsByTagName('html')[0].className = 'none_scroll';
+
+      },
+
+      hidePopup:function () {
+
+        var clickHide=document.getElementsByClassName('none_popup')[0];
+
+        clickHide.className = 'none_popup';
+
+        document.getElementsByTagName('body')[0].className = '';
+
+        document.getElementsByTagName('html')[0].className = '';
+
+      }
+
+    }
+
+  }
+
+</script>
