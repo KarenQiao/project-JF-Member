@@ -22,8 +22,8 @@ Vue.filter('time',function (value) {
       oHour = this.getHours(),
       oMin = this.getMinutes(),
       oSen = this.getSeconds(),
-      oTime = oYear + '-' + getzf(oMonth) + '-' + getzf(oDay) + ' ' + getzf(oHour) + ':' + getzf(oMin) + ':' + getzf(oSen);//最后拼接时间
-
+      oTime = oYear + '.' + getzf(oMonth) + '.' + getzf(oDay) ;/*+ ' ' + getzf(oHour) + ':' + getzf(oMin) + ':' + getzf(oSen);//最后拼接时间
+*/
     return oTime;
   };
   return cc.toLocaleString();
@@ -46,6 +46,40 @@ Vue.filter('level',function (value) {
   }else {
 
     result='太阳'
+  }
+
+  return result
+
+});
+
+
+//时间过滤
+Vue.filter('orderStatue',function (value) {
+
+  let result;
+
+  if(value=='00'){
+
+    result='待付款'
+
+  }else if(value=='10'){
+
+    result='已付款'
+
+  }else if(value=='20'){
+
+    result='已发货'
+
+  }
+  else if(value=='30'){
+
+    result='已过期'
+
+  }
+  else if(value=='40'){
+
+    result='已完成'
+
   }
 
   return result

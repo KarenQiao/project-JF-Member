@@ -5,9 +5,9 @@
     <div class="fixed_top_bar">
       <div class="bar"></div>
       <div class="all_tab yao_shadow">
-        <p class="show" onclick="orderFn.tabChange(0)">未使用</p>
-        <p onclick="orderFn.tabChange(1)">已使用</p>
-        <p onclick="orderFn.tabChange(2)">已过期</p>
+        <p class="show" onclick="orderFn.tabChange(0)" @click="getInitList(30)">未使用</p>
+        <p onclick="orderFn.tabChange(1)" @click="getInitList(40)">已使用</p>
+        <p onclick="orderFn.tabChange(2)" @click="getInitList(50)">已过期</p>
 
       </div>
     </div>
@@ -20,220 +20,89 @@
 
         <div class="all box">
 
-          <!--优惠券-->
-          <div class="card_bag_plate">
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">元优惠券</span></p>
+          <keep-alive>
 
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
+          <!--  <data-list :dataList="datasList"></data-list>-->
+            <!--优惠券-->
+            <div class="card_bag_plate">
+
+            <!--  <p v-if="dataList.length==0||!dataList"></p>-->
+
+              <div v-if="dataList.length!=0"  v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+
+                <div class="card_left">
+                  <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
+
+                  <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p>
+
+                  <p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p>
+
+                  <p class="left_bottom_font"><span>有效期：</span><span>{{item.validityStart|time}}-{{item.validityEnd|time}}</span></p>
+                </div>
+
+                <div class="card_right" v-if="item.ticketType==30">
+
+                  <div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"/></div>
+
+                </div>
+
+                <div class="card_right" v-else="">
+
+                  <p class="left_top_small">全品类</p>
+
+                  <p class="left_bottom_font">{{item.ticketMarketingValue}}</p>
+                </div>
+
+
               </div>
 
-              <div class="card_right">
-                <p class="left_top_small">食品类</p>
+              <p v-show="dataList.length==0">暂无未使用的优惠券</p>
 
-                <p class="left_bottom_font">无门槛</p>
-              </div>
             </div>
 
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>300</span><span class="left_top_small">元优惠券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">旅游类</p>
-
-                <p class="left_bottom_font font_padding">特惠线路使用</p>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">元优惠券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">满399元可用</p>
-              </div>
-            </div>
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>8.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">无门槛</p>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>6.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">旅游类</p>
-
-                <p class="left_bottom_font font_padding">特惠线路使用</p>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>5.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">满399元可用</p>
-              </div>
-            </div>
-
-            <div class="mianxi_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>10</span><span class="left_top_small">天免息券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"/></div>
-              </div>
-            </div>
-
-            <div class="mianxi_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">天免息券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"/></div>
-              </div>
-            </div>
-          </div>
-
+          </keep-alive>
 
         </div>
 
         <!--代付款-->
         <div class="used box">
 
-          <!--优惠券-->
-          <div class="card_bag_plate">
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">元优惠券</span></p>
+              <!--优惠券-->
+            <div class="card_bag_plate">
 
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
+              <div v-if="usedList.length!=0" v-for="item in usedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+
+                <div class="card_left">
+                  <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
+
+                  <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p>
+
+                  <p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p>
+
+                  <p class="left_bottom_font"><span>有效期：</span><span>{{item.validityStart|time}}-{{item.validityEnd|time}}</span></p>
+                </div>
+
+                <div class="card_right" v-if="item.ticketType==30">
+
+                  <div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"/></div>
+
+                </div>
+
+                <div class="card_right" v-else="">
+
+                  <p class="left_top_small">全品类</p>
+
+                  <p class="left_bottom_font">{{item.ticketMarketingValue}}</p>
+
+                  <span class="status_tips">已使用</span>
+                </div>
+
+
               </div>
 
-              <div class="card_right">
-                <p class="left_top_small">食品类</p>
+              <p v-show="usedList.length==0">暂无已使用的优惠券</p>
 
-                <p class="left_bottom_font">无门槛</p>
-
-                <span class="status_tips">已使用</span>
-              </div>
             </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>300</span><span class="left_top_small">元优惠券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">旅游类</p>
-
-                <p class="left_bottom_font font_padding">特惠线路使用</p>
-
-                <span class="status_tips">已使用</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">元优惠券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">满399元可用</p>
-
-                <span class="status_tips">已使用</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>8.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">无门槛</p>
-
-                <span class="status_tips">已使用</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>6.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">旅游类</p>
-
-                <p class="left_bottom_font font_padding">特惠线路使用</p>
-
-                <span class="status_tips">已使用</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>5.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">满399元可用</p>
-
-                <span class="status_tips">已使用</span>
-              </div>
-            </div>
-          </div>
 
         </div>
 
@@ -241,124 +110,41 @@
         <!--待收货-->
         <div class="dated box">
 
-          <!--优惠券-->
-          <div class="card_bag_plate">
-            <div class="youhui_card">
+        <div class="card_bag_plate">
+
+            <div  v-if="datedList.length!=0" v-for="item in datedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+
               <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">元优惠券</span></p>
+                <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
 
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
+                <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p>
+
+                <p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p>
+
+                <p class="left_bottom_font"><span>有效期：</span><span>{{item.validityStart|time}}-{{item.validityEnd|time}}</span></p>
               </div>
 
-              <div class="card_right">
-                <p class="left_top_small">食品类</p>
+              <div class="card_right" v-if="item.ticketType==30">
 
-                <p class="left_bottom_font">无门槛</p>
-                <span class="status_tips">已过期</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>300</span><span class="left_top_small">元优惠券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">旅游类</p>
-
-                <p class="left_bottom_font font_padding">特惠线路使用</p>
-                <span class="status_tips">已过期</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">元优惠券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">满399元可用</p>
-                <span class="status_tips">已过期</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>8.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">无门槛</p>
-                <span class="status_tips">已过期</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>6.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">旅游类</p>
-
-                <p class="left_bottom_font font_padding">特惠线路使用</p>
-                <span class="status_tips">已过期</span>
-              </div>
-            </div>
-
-            <div class="youhui_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>5.8</span><span class="left_top_small">折</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <p class="left_top_small font_padding">食品类</p>
-
-                <p class="left_bottom_font font_padding">满399元可用</p>
-                <span class="status_tips">已过期</span>
-              </div>
-            </div>
-
-            <div class="mianxi_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>10</span><span class="left_top_small">天免息券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
                 <div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"/></div>
-                <span class="status_tips">已过期</span>
+
               </div>
+
+              <div class="card_right" v-else="">
+
+                <p class="left_top_small">全品类</p>
+
+                <p class="left_bottom_font">{{item.ticketMarketingValue}}</p>
+
+                <span class="status_tips">已使用</span>
+              </div>
+
+
             </div>
+          <p v-show="datedList.length==0">暂无已过期的优惠券</p>
 
-            <div class="mianxi_card">
-              <div class="card_left">
-                <p class="left_top_font"><span>30</span><span class="left_top_small">天免息券</span></p>
-
-                <p class="left_bottom_font"><span>有效期：</span><span>2018.08.16-2018.09.18</span></p>
-              </div>
-
-              <div class="card_right">
-                <div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"/></div>
-                <span class="status_tips">已过期</span>
-              </div>
-            </div>
           </div>
+
         </div>
 
 
@@ -376,6 +162,16 @@
 
   import API from '../../assets/api'
 
+  /*let allList={
+
+    template: '<div class="card_bag_plate">' +
+    '<p v-if="dataList.length==0||!dataList">暂无未使用的优惠券</p>' +
+    '<div v-else v-for="item in dataList" ><div class="card_left"><p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p><p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p><p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p><p class="left_bottom_font"><span>有效期：</span><span>{{item.validityStart|time}}-{{item.validityEnd|time}}</span></p></div><div class="card_right" v-if="item.ticketType==30"><div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"></div></div><div class="card_right" v-else=""><p class="left_top_small">全品类</p><p class="left_bottom_font">{{item.ticketMarketingValue}}</p></div></div></div>',
+
+  };*/
+
+
+
   export default {
     name:'cardBag',
 
@@ -384,7 +180,13 @@
 
         userId:'',
 
-        dataList:''
+        dataList:'',
+
+        usedList:'',
+
+        datedList:'',
+
+        state:'',//30未使用，40已经使用，50已过期
 
       }
     },
@@ -397,21 +199,64 @@
 
       this.mobileNo=userData.mobileNo;
 
-      this.getInitList();
+      this.getInitList(30);
 
     },
 
+ /*   components:{
+
+      'dataList':allList
+
+    },*/
+
+   /* props:{
+
+      dataList:{
+        type:Array
+      }
+    },*/
+
     methods:{
 
-      getInitList(){
+      getInitList(num){
 
+        jfShowTips.loadingShow()
         let params={
-          userId:this.userId
+          userId:this.userId,
+
+          state:num
         };
 
         API.postFn(API.couponsBag,params).then(function (res) {
 
-          console.log(res)
+          jfShowTips.loadingRemove();
+
+          console.log(res);
+
+          if(res.data.code=='000000'){
+
+            if(num==30){
+
+              this.dataList=res.data.ticketList;
+
+            }else if(num==40){
+
+              this.usedList=res.data.ticketList;
+            }else {
+
+              this.datedList=res.data.ticketList;
+            }
+
+
+
+            console.log(res.data.ticketList)
+
+          }else {
+
+            jfShowTips.toastShow({'text':res.data.message});
+
+            return false
+          }
 
         }.bind(this))
           .catch(function (error) {

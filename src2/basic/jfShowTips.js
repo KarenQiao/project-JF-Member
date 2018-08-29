@@ -102,7 +102,7 @@ let jfShowTips = {
 
         thisAddEle.focus();//loading元素获得焦点
 
-       /* setTimeout(function () {
+/*        setTimeout(function () {
 
             if(thisAddEle){
 
@@ -115,8 +115,7 @@ let jfShowTips = {
                 _this.removeBlur();
             }
 
-        },50000);//五秒
-*/
+        },50000);//五秒*/
 
 
     },
