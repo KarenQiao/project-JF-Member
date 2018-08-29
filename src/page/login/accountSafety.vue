@@ -114,7 +114,7 @@
 
           let params={
 
-            userId:this.userId,
+            mobileNo:this.mobileNo,
 
             smsCode:this.smsCode,
 

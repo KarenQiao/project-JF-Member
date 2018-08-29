@@ -12,12 +12,12 @@
     <div class="input_box">
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_phone.png"></span>
-        <input type="tel" placeholder="请输入电话号码" v-model="username" />
+        <input type="tel" placeholder="请输入电话号码" v-model="username" maxlength="11"/>
       </label>
 
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_locked.png"></span>
-        <input type="password" placeholder="请输入密码" v-model="pasd" />
+        <input type="password" placeholder="请输入密码" v-model="pasd" maxlength="20"/>
       </label>
 
       <div>
@@ -92,6 +92,8 @@
 
         API.postFn(API.login,params).then(function (res) {
 
+          console.log(res)
+
           if(res.data.code='00000'){
 
             localStorage.setItem('userData',JSON.stringify(res.data.data));
@@ -109,6 +111,8 @@
 
         }.bind(this))
           .catch(function (error) {
+
+            console.log(error)
 
           }.bind(this))
 

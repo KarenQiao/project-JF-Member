@@ -266,13 +266,60 @@
 
 <script>
 
+  import API from '../../assets/api'
+
   export default {
     name:'order',
 
     data(){
       return{
 
+        dataList:'',
+
+        userId:'',
+
+        orderStatus:'',
+
+        page:1,
+
       }
+    },
+
+    mounted(){
+
+      let userData= JSON.parse(localStorage.getItem('userData'));
+
+      this.userId=userData.userId;
+    },
+
+    methods:{
+
+      getList(){
+
+        let params={
+          userId:this.userId,
+
+          orderStatus:this.orderStatus,
+
+          page:this.page
+
+        }
+
+        API.postFn(API.order,params).then(function (res) {
+
+          if(res.data.code='00000'){
+
+          }
+
+        }.bind(this))
+          .catch(function (error) {
+
+          }.bind(this))
+
+      }
+
+
+
     }
   }
 </script>
