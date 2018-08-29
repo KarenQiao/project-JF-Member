@@ -4,9 +4,11 @@
     <div class="power_top">
       <p class="member_logo">
         <span></span>
-        <img src="../../../static/images/grade_sun.png">
+        <img src="../../../static/images/grade_star.png" v-if="userData.userLevel==1">
+        <img src="../../../static/images/grade_moon.png" v-else-if="userData.userLevel==2">
+        <img src="../../../static/images/grade_sun.png" v-else="userData.userLevel==3">
       </p>
-      <p>当前等级：<span>太阳</span></p>
+      <p>当前等级：<span>{{userData.userLevel|level}}</span></p>
     </div>
 
     <a class="more_rule" href="#/rightDetails">了解更多会员等级规则》</a>
@@ -20,31 +22,34 @@
         <img src="../../../static/images/icon_exchange.png">
         <p>积分兑换</p>
       </a>
-      <a href="#/member_bag">
+      <a href="#/member_bag" :class="userData.userLevel==1?'locked':''">
         <img src="../../../static/images/icon_gift.png">
         <p>会员礼包</p>
       </a>
-      <a href="#/upgrade_awards">
+      <a href="#/upgrade_awards" :class="userData.userLevel==1?'locked':''">
         <img src="../../../static/images/icon_upgrade_awards.png">
         <p>升级奖励</p>
       </a>
-      <a href="#/birthday">
+      <a href="#/birthday" :class="userData.userLevel==1?'locked':''">
         <img src="../../../static/images/icon_birthday_privileges.png">
         <p>生日特权</p>
       </a>
+
+      <a :class="userData.userLevel==1?'locked':''">
+        <img src="../../../static/images/icon_customer_service.png">
+        <p>专属客服</p>
+      </a>
+
       <a>
         <img src="../../../static/images/icon_trial.png">
         <p>0元试用</p>
       </a>
-      <a class="locked">
-        <img src="../../../static/images/icon_customer_service.png">
-        <p>专属客服</p>
-      </a>
-      <a class="locked">
+
+      <a>
         <img src="../../../static/images/icon_surprise.png">
         <p>10分惊喜</p>
       </a>
-      <a class="locked">
+      <a>
         <img src="../../../static/images/icon_exclusive.png">
         <p>高端专享</p>
       </a>
@@ -67,6 +72,15 @@
 
       return{
 
+        userData:{
+
+          mobileNo:'',
+
+          total:'',
+
+          level:''
+
+        },
       }
 
     },
@@ -78,6 +92,7 @@
 
     mounted(){
 
+      this.userData=JSON.parse(localStorage.getItem('userData'))
 
 
     }

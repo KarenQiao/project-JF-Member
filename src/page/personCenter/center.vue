@@ -7,14 +7,16 @@
       <div class="member_left member_left_center">
         <p class="member_logo"><img src="../../../static/images/logo.jpg"></p>
         <p>
-          <span class="member_name">Karen Qiao</span>
-          <span class="member_score">568积分</span>
+          <span class="member_name">{{userData.mobileNo}}</span>
+          <span class="member_score">{{userData.total}}积分</span>
         </p>
       </div>
 
       <div class="member_right member_center">
         <span class="bg_light"></span>
-        <img src="../../../static/images/grade_sun.png">
+        <img src="../../../static/images/grade_star.png" v-if="userData.userLevel==1">
+        <img src="../../../static/images/grade_moon.png" v-else-if="userData.userLevel==2">
+        <img src="../../../static/images/grade_sun.png" v-else="userData.userLevel==3">
       </div>
 
     </div>
@@ -72,11 +74,19 @@
     data(){
       return{
 
+        userData:''
       }
     },
 
     components:{
       'memberFooter':memberFooter
+    },
+
+    mounted(){
+
+      this.userData=JSON.parse(localStorage.getItem('userData'))
+
+
     }
 
 

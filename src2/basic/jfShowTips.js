@@ -90,11 +90,11 @@ let jfShowTips = {
 
             };
 
-        var thisInnerHtml='<div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div><i>'+thisText+'</i>';//html内容
+        var thisInnerHtml='<span class="img"></span><span class="box"><i class="box1"></i><i class="box2"></i><i class="box3"></i></span>';//html内容
 
         _this.addBlur();
 
-        var thisBg=_this.addBg('loading_bg');
+      //  var thisBg=_this.addBg('loading_bg');
 
         var thisAddEle=_this.addNode('div',thisInnerHtml,'tip_loading');//增加节点
 
@@ -102,7 +102,7 @@ let jfShowTips = {
 
         thisAddEle.focus();//loading元素获得焦点
 
-        setTimeout(function () {
+       /* setTimeout(function () {
 
             if(thisAddEle){
 
@@ -113,19 +113,10 @@ let jfShowTips = {
                 windowBanEvent.unbundling();//解绑页面禁止事件
 
                 _this.removeBlur();
-
-                _this.transitionEndFn(thisBg,function () {
-
-                    _this.removeBg('loading_bg');
-
-                });
-
-                thisBg.style.opacity='0';
-
             }
 
-        },5000);//五秒
-
+        },50000);//五秒
+*/
 
 
     },
@@ -145,7 +136,7 @@ let jfShowTips = {
 
             _this.removeBlur();
 
-            _this.removeBg('loading_bg');
+          //  _this.removeBg('loading_bg');
 
         }
 
