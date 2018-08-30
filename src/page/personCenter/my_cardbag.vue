@@ -17,23 +17,19 @@
 
       <div class="order_box card_box member_start_start">
 
-
         <div class="all box">
-
-          <keep-alive>
-
           <!--  <data-list :dataList="datasList"></data-list>-->
             <!--优惠券-->
             <div class="card_bag_plate">
 
-            <!--  <p v-if="dataList.length==0||!dataList"></p>-->
+              <p v-if="dataList.length==0||!dataList"></p>
 
-              <div v-if="dataList.length!=0"  v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+              <div v-else  v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
 
                 <div class="card_left">
                   <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
 
-                  <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p>
+                  <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.discount*10}}</span><span class="left_top_small">折</span></p>
 
                   <p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p>
 
@@ -56,11 +52,9 @@
 
               </div>
 
-              <p v-show="dataList.length==0">暂无未使用的优惠券</p>
+              <!--<p v-show="dataList.length==0">暂无未使用的优惠券</p>-->
 
             </div>
-
-          </keep-alive>
 
         </div>
 
@@ -70,12 +64,14 @@
               <!--优惠券-->
             <div class="card_bag_plate">
 
-              <div v-if="usedList.length!=0" v-for="item in usedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+              <p v-if="usedList.length==0">暂无已使用的优惠券</p>
+
+              <div v-else="" v-for="item in usedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
 
                 <div class="card_left">
                   <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
 
-                  <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p>
+                  <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.discount*10}}</span><span class="left_top_small">折</span></p>
 
                   <p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p>
 
@@ -100,8 +96,6 @@
 
               </div>
 
-              <p v-show="usedList.length==0">暂无已使用的优惠券</p>
-
             </div>
 
         </div>
@@ -117,7 +111,7 @@
               <div class="card_left">
                 <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
 
-                <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p>
+                <p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.discount*10}}</span><span class="left_top_small">折</span></p>
 
                 <p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p>
 
@@ -180,11 +174,11 @@
 
         userId:'',
 
-        dataList:'',
+        dataList:[],
 
-        usedList:'',
+        usedList:[],
 
-        datedList:'',
+        datedList:[],
 
         state:'',//30未使用，40已经使用，50已过期
 
