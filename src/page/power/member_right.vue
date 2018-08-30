@@ -45,11 +45,11 @@
         <p>0元试用</p>
       </a>
 
-      <a>
+      <a class="coming_online_gray">
         <img src="../../../static/images/icon_surprise.png">
         <p>10分惊喜</p>
       </a>
-      <a>
+      <a class="coming_online_gray">
         <img src="../../../static/images/icon_exclusive.png">
         <p>高端专享</p>
       </a>
