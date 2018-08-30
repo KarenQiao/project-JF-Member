@@ -149,7 +149,7 @@
 
    // this.getBannerList();
 
-    //this.getColumn();
+    this.getColumn();
 
     },
 

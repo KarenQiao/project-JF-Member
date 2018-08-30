@@ -28,14 +28,13 @@
        <p class="gray_text">等待开放中</p>
      </a>
 
-      <a class="member_between_center" @click="$router.push('/coupons')">
+      <a class="member_between_center"  @click="$router.push('/coupons')">
         <p><img src="../../../static/images/icon_mine_voucher.png"><span>我的券包</span></p>
 
       </a>
 
-      <a class="member_between_center" @click="$router.push('/order')">
+      <a class="member_between_center"  @click="$router.push('/order')">
         <p><img src="../../../static/images/icon_mine_order.png"><span>我的订单</span></p>
-
       </a>
 
       <a class="member_between_center">
