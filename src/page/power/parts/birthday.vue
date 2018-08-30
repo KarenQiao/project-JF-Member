@@ -17,7 +17,7 @@
         <div class="parts_details_font">
           <p class="parts_details_title">获得条件</p>
 
-          <p class="more_details_font">达到银卡及以上级别会员方可解锁</p>
+          <p class="more_details_font">达到月亮及以上级别会员方可解锁</p>
 
           <p class="more_details_font">已完成实名认证的会员</p>
         </div>
