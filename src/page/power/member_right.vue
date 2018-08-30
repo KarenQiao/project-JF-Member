@@ -35,12 +35,12 @@
         <p>生日特权</p>
       </a>
 
-      <a :class="userData.userLevel==1?'locked':''">
+      <a :class="userData.userLevel==1?'locked':''"  @click="customerFn">
         <img src="../../../static/images/icon_customer_service.png">
         <p>专属客服</p>
       </a>
 
-      <a>
+      <a class="coming_online_gray">
         <img src="../../../static/images/icon_trial.png">
         <p>0元试用</p>
       </a>
@@ -61,6 +61,8 @@
 </template>
 
 <script>
+
+  import MemberCustomer from '../../assets/customer';
 
   import memberFooter from '../../components/footer.vue'
 
@@ -92,9 +94,28 @@
 
     mounted(){
 
+      console.log(MemberCustomer)
+
       this.userData=JSON.parse(localStorage.getItem('userData'))
 
+      MemberCustomer.init({
 
+        'tel':this.userData.mobileNo,
+
+        '用户ID':this.userData.userId,
+
+        '等级':this.userData.userLevel
+      })
+
+    },
+
+    methods:{
+      customerFn(){
+
+
+        MemberCustomer.click();
+
+      }
     }
   }
 </script>
