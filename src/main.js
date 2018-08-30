@@ -17,13 +17,15 @@ Vue.use(VueLazyLoad,{
 
 
 
-Vue.use(VueWechatTitle)
+Vue.use(VueWechatTitle);
 
 Vue.config.productionTip = false;
 
 import wcSwiper from 'wc-swiper'
 import 'wc-swiper/style.css'
 Vue.use(wcSwiper);
+
+
 
 
 
