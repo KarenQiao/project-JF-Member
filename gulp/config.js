@@ -9,7 +9,7 @@ module.exports = {
 
        // host: "172.18.1.19",//ip
 
-        port: 205,//端口
+        port: 145,//端口
 
         livereload: true//是否支持实时刷新
 

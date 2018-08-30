@@ -92,9 +92,11 @@
 
         API.postFn(API.login,params).then(function (res) {
 
-          console.log(res)
+          console.log(res.data);
 
-          if(res.data.code='00000'){
+          console.log(res.data.code);
+
+          if(res.data.code=='00000'){
 
             localStorage.setItem('userData',JSON.stringify(res.data.data));
 

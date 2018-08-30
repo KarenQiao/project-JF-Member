@@ -5,11 +5,12 @@
   <div class="fixed_top_bar">
     <div class="bar"></div>
     <div class="all_tab yao_shadow">
-      <p class="show" onclick="orderFn.tabChange(0)">全部</p>
-      <p onclick="orderFn.tabChange(1)">待付款</p>
-      <p onclick="orderFn.tabChange(2)">待收货</p>
-      <p onclick="orderFn.tabChange(3)">已完成</p>
-      <p onclick="orderFn.tabChange(4)">已取消</p>
+     <!-- <p class="show" onclick="orderFn.tabChange(0)" @click="getList('')">全部</p>-->
+      <p class="show" onclick="orderFn.tabChange(0)" @click="getList('00')">待付款</p>
+      <p onclick="orderFn.tabChange(1)" @click="getList('10')">已付款</p>
+      <p onclick="orderFn.tabChange(2)" @click="getList('20')">已发货</p>
+      <p onclick="orderFn.tabChange(3)" @click="getList('30')">已过期</p>
+      <p onclick="orderFn.tabChange(4)" @click="getList('40')">已完成</p>
     </div>
   </div>
 
@@ -20,13 +21,13 @@
       <!--全部-->
       <div class="all box">
 
-        <a class="order_list">
+        <a class="order_list" v-for="item in dataList">
           <div class="order_status member_between_center">
             <p>
-              <img src="../../../static/images/ent_logo.png">
-              <span>德开药店</span>
+              <span>订单号:</span>
+              <span>{{item.orderNo}}</span>
             </p>
-            <p class="golden_text">已完成</p>
+            <p class="golden_text">{{item.orderStatus|orderStatue}}</p>
           </div>
           <div class="details member_left_center">
             <p><img src="../../../static/images/produce_2.png"></p>
@@ -49,7 +50,7 @@
             </div>
           </div>
           <div class="total">
-            总共<span>5</span>件商品，合计<span>￥800.00</span> 包含运费<span>￥80.00</span>
+            总共<span>{{item.shopNum}}</span>件商品，合计<span>￥800.00</span> 包含运费<span>￥{{item.extraMoney}}</span>
           </div>
         </a>
 
@@ -278,7 +279,7 @@
 
         userId:'',
 
-        orderStatus:'',
+        orderStatus:'',//00-待付款,10-已付款,20-已发货,30-已过期,40-已完成,全部为空
 
         page:1,
 
@@ -290,16 +291,18 @@
       let userData= JSON.parse(localStorage.getItem('userData'));
 
       this.userId=userData.userId;
+
+      this.getList('');
     },
 
     methods:{
 
-      getList(){
+      getList(num){
 
         let params={
           userId:this.userId,
 
-          orderStatus:this.orderStatus,
+          orderStatus:num,
 
           page:this.page
 
@@ -307,8 +310,14 @@
 
         API.postFn(API.order,params).then(function (res) {
 
+          console.log(res)
+
           if(res.data.code='00000'){
 
+            this.dataList=res.data.list;
+
+          }else {
+            jfShowTips.toastShow({'text':res.data.message})
           }
 
         }.bind(this))

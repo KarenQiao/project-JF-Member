@@ -23,13 +23,13 @@ let axiosHttp={
 
   forgetPasd:process.env.API_ROOT+'v3/hysec/forgetPassword',//忘记密码
 
-  forgetMsg:process.env.API_ROOT+'v3/hysec/modifyPasswdCode',//忘记密码验证码
+  forgetMsg:process.env.API_ROOT+'v3/hysec/modifyPasswdCode',//忘记密码验证码,修改密码
 
   modifyPasd:process.env.API_ROOT+'v3/hysec/updatePassword',//修改密码
 
   couponsBag:process.env.API_ROOT+'v3/hyvip/userTicketRest/listTicketByUserId',//券包
 
-  order:process.env.API_ROOT+'/v3/mallOrederRest/listOrderByUser',//订单
+  order:process.env.API_ROOT+'v3/hyvip/mallOrederRest/listOrderByUser',//订单
 
 
   getFn:(url,params)=>{
