@@ -41,13 +41,13 @@
 .my_order_page{
   width: 100%;
   overflow-x: hidden;
-  margin-top: 10px;
-  height: calc(~'100vh - 60px');
-  background: #fff;
+ /* margin-top: 10px;
+  height: calc(~'100vh - 60px');*/
+ // background: #fff;
   overflow-y: auto;
 
   .order_box{
-    width: 500%;
+    width: 100%;
     transition: transform 0.2s ease-in-out;
 
     .box{
@@ -63,10 +63,14 @@
         color: #4a4a4a;
         background: #ffffff;
         margin-bottom: 10px;
+        box-shadow: 0 0 1px 0 #e9e9e9;
+
+        &:first-child{
+          margin-top: 10px;
+        }
         .order_status{
 
           padding: 10px 0;
-
           border-bottom: solid 1px #f1f0f0;
 
 
@@ -102,6 +106,8 @@
 
           >div{
 
+            flex-grow: 1;
+
             .title{
               color: #4a4a4a;
               font-size: 14px;
@@ -117,6 +123,13 @@
                 color: #8a8a8a;
                 display: inline-block;
                 margin: 5px 0;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-box-pack: center;
+                -webkit-line-clamp: 1;
               }
             }
 

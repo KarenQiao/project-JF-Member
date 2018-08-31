@@ -22,9 +22,7 @@
             <!--优惠券-->
             <div class="card_bag_plate">
 
-              <p v-if="dataList.length==0||!dataList"></p>
-
-              <div v-else  v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+              <div v-if="dataList.length!=0"  v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
 
                 <div class="card_left">
                   <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
@@ -52,7 +50,7 @@
 
               </div>
 
-              <!--<p v-show="dataList.length==0">暂无未使用的优惠券</p>-->
+              <p v-show="dataList.length==0" class="tickets_none"></p>
 
             </div>
 
@@ -64,9 +62,9 @@
               <!--优惠券-->
             <div class="card_bag_plate">
 
-              <p v-if="usedList.length==0">暂无已使用的优惠券</p>
 
-              <div v-else="" v-for="item in usedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+
+              <div v-if="usedList.length!=0" v-for="item in usedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
 
                 <div class="card_left">
                   <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
@@ -95,6 +93,8 @@
 
 
               </div>
+
+              <p v-show="usedList.length==0" class="tickets_none"></p>
 
             </div>
 
@@ -135,7 +135,7 @@
 
 
             </div>
-          <p v-show="datedList.length==0">暂无已过期的优惠券</p>
+             <p v-show="datedList.length==0" class="tickets_none"></p>
 
           </div>
 
@@ -156,17 +156,8 @@
 
   import API from '../../assets/api'
 
-  /*let allList={
-
-    template: '<div class="card_bag_plate">' +
-    '<p v-if="dataList.length==0||!dataList">暂无未使用的优惠券</p>' +
-    '<div v-else v-for="item in dataList" ><div class="card_left"><p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p><p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p><p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p><p class="left_bottom_font"><span>有效期：</span><span>{{item.validityStart|time}}-{{item.validityEnd|time}}</span></p></div><div class="card_right" v-if="item.ticketType==30"><div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"></div></div><div class="card_right" v-else=""><p class="left_top_small">全品类</p><p class="left_bottom_font">{{item.ticketMarketingValue}}</p></div></div></div>',
-
-  };*/
-
-
-
   export default {
+
     name:'cardBag',
 
     data(){
@@ -197,24 +188,14 @@
 
     },
 
- /*   components:{
-
-      'dataList':allList
-
-    },*/
-
-   /* props:{
-
-      dataList:{
-        type:Array
-      }
-    },*/
 
     methods:{
 
       getInitList(num){
 
-        jfShowTips.loadingShow()
+        jfShowTips.loadingShow();
+
+
         let params={
           userId:this.userId,
 
@@ -233,15 +214,34 @@
 
               this.dataList=res.data.ticketList;
 
+              if(this.dataList==0){
+
+                document.getElementsByClassName('tickets_none')[0].innerHTML='暂无未使用的优惠券'
+
+              }
+
+              return false
+
             }else if(num==40){
 
               this.usedList=res.data.ticketList;
+
+              if(this.usedList==0){
+
+                document.getElementsByClassName('tickets_none')[1].innerHTML='暂无已使用的优惠券'
+              }
+
+              return false
             }else {
 
               this.datedList=res.data.ticketList;
+
+              if(this.datedList==0){
+
+                document.getElementsByClassName('tickets_none')[2].innerHTML='暂无已过期的优惠券'
+              }
+
             }
-
-
 
             console.log(res.data.ticketList)
 

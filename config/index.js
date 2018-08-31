@@ -12,8 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://jq.jiabaitiao.cn/',//设置你调用的接口域名和端口号
-      //  target:'http://116.62.199.212:8089/',
+       // target: 'http://jq.jiabaitiao.cn/',//设置你调用的接口域名和端口号
+        target:'http://116.62.199.212:8089/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/'
