@@ -13,44 +13,63 @@
 
     <a class="more_rule" href="#/rightDetails">了解更多会员等级规则》</a>
 
+    <!--敬请期待：coming_online_gray ；锁定：lock_power-->
     <div class="power_list member_between_center">
      <a href="#/points_speed">
-       <img src="../../../static/images/icon_integral_acceleration.png">
+       <div class="power_img">
+         <img src="../../../static/images/icon_integral_acceleration.png">
+       </div>
        <p>积分加速</p>
      </a>
       <a href="#/points_exchange">
-        <img src="../../../static/images/icon_exchange.png">
+        <div class="power_img">
+          <img src="../../../static/images/icon_exchange.png">
+        </div>
         <p>积分兑换</p>
       </a>
       <a href="#/member_bag" :class="userData.userLevel==1?'locked':''">
-        <img src="../../../static/images/icon_gift.png">
+        <div class="power_img">
+          <img src="../../../static/images/icon_gift.png">
+        </div>
         <p>会员礼包</p>
       </a>
       <a href="#/upgrade_awards" :class="userData.userLevel==1?'locked':''">
-        <img src="../../../static/images/icon_upgrade_awards.png">
+        <div class="power_img">
+          <img src="../../../static/images/icon_upgrade_awards.png">
+        </div>
         <p>升级奖励</p>
       </a>
       <a href="#/birthday" :class="userData.userLevel==1?'locked':''">
-        <img src="../../../static/images/icon_birthday_privileges.png">
+        <div class="power_img">
+          <img src="../../../static/images/icon_birthday_privileges.png">
+        </div>
         <p>生日特权</p>
       </a>
 
       <a :class="userData.userLevel==1?'locked':''"  @click="customerFn">
-        <img src="../../../static/images/icon_customer_service.png">
+        <div class="power_img lock_power">
+          <img src="../../../static/images/icon_customer_service.png">
+        </div>
         <p>专属客服</p>
       </a>
 
       <a class="coming_online_gray">
-        <img src="../../../static/images/icon_trial.png">
+        <div class="power_img">
+          <img src="../../../static/images/icon_trial.png">
+        </div>
         <p>0元试用</p>
       </a>
 
       <a class="coming_online_gray">
-        <img src="../../../static/images/icon_surprise.png">
+        <div class="power_img">
+          <img src="../../../static/images/icon_surprise.png">
+        </div>
         <p>10分惊喜</p>
       </a>
       <a class="coming_online_gray">
-        <img src="../../../static/images/icon_exclusive.png">
+        <div class="power_img">
+          <img src="../../../static/images/icon_exclusive.png">
+        </div>
         <p>高端专享</p>
       </a>
     </div>
