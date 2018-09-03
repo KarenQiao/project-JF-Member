@@ -21,7 +21,8 @@
       <!--全部-->
       <div class="all box">
 
-        <scroller :on-infinite="infinite" ref:my_scroller  delegate-id="myScroller">
+        <scroller :on-infinite="infinite" :on-refresh="refresh" ref="my_scroller"  class="my-scroller"  refresh-layer-color="#bb9966" no-data-text="没有更多订单啦~"  v-if="dataList.length>0" >
+
           <a class="order_list" v-for="item in dataList">
             <div class="order_status member_between_center">
               <p>
@@ -46,8 +47,13 @@
               总共<span>{{item.shopNum}}</span>件商品，合计<span>￥800.00</span> 包含运费<span>￥{{item.extraMoney}}</span>
             </div>
           </a>
+
         </scroller>
-        <p v-show="noData">没有更多数据了~</p>
+
+        <p v-show="noDataText" class="tickets_none">
+          <img src="../../../static/images/noOrder.png">
+          <span>暂无相关订单数据哦</span></p>
+
       </div>
 
     </div>
@@ -63,11 +69,6 @@
 <script>
 
   import API from '../../assets/api'
-
-  import Vue from 'vue'
-  import VueScroller from 'vue-scroller'
-  Vue.use(VueScroller)
-
   export default {
     name:'order',
 
@@ -84,7 +85,9 @@
 
         params:{},
 
-        noData:false,
+        noData:true,
+
+        noDataText:false
 
 
 
@@ -97,6 +100,8 @@
 
       this.userId=userData.userId;
 
+   //   this.userId=8628699251605504;
+
       this.getList(this.page);
     },
 
@@ -104,11 +109,27 @@
 
       getList(num){
 
+        if(num==1){
+
+          jfShowTips.loadingShow()
+
+        }
+
         API.postFn(API.order,{userId:this.userId, orderStatus:this.orderStatus,page:num}).then(function (res) {
 
-          console.log(res)
+          console.log(res);
+
+          jfShowTips.loadingRemove()
 
           if(res.data.code='00000'){
+
+            if(res.data.list.length==0&&num==1){
+
+              this.noDataText=true;
+
+              return false
+
+            }
 
             for(var i=0; i<res.data.list.length;i++){
 
@@ -118,7 +139,11 @@
 
             if(res.data.list.length<10){
 
-              this.noData = "没有更多数据"
+              this.noData = true;
+
+            }else {
+
+              this.noData = false;
             }
 
           }else {
@@ -132,25 +157,63 @@
 
       },
 
+      refresh(done){
+
+        console.log('下拉刷新')
+
+        let self = this;//this指向问题
+
+        setTimeout(function () {
+
+          self.dataList=[];
+
+          self.page=1
+
+          self.getList(self.page);
+
+          self.noData = true;
+
+          done(true)
+
+        },1500)
+      },
+
       infinite(done) {
+
+        console.log('上拉加载1')
+
+        console.log('noData='+this.noData)
 
         if(this.noData){
 
           setTimeout(() => {
-            this.$refs.my_scroller.finishInfinite(2);
+
+            console.log('无法上啦加载~结束')
+
+            this.$refs.my_scroller.finishInfinite(false);
+
+            done(true)
+
           });
           return false;
         }
 
         let self = this;//this指向问题
+
         setTimeout(() => {
+
+          console.log('上拉加载')
+
           self.page+=1;
+
           self.getList(self.page);
 
-          done()
+          self.$refs.my_scroller.resize();
+
+          done(true)
 
         }, 1500)
-      }
+      },
 
       },
 
@@ -161,4 +224,10 @@
 
   }
 </script>
+
+<style>
+
+
+
+</style>
 

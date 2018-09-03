@@ -21,6 +21,8 @@ let axiosHttp={
 
   login:process.env.API_ROOT+'v3/hysec/authorizations',//登录
 
+  modifyLogin:process.env.API_ROOT+'v3/hysec/modifyLoginStatus',//登录
+
   forgetPasd:process.env.API_ROOT+'v3/hysec/forgetPassword',//忘记密码
 
   forgetMsg:process.env.API_ROOT+'v3/hysec/modifyPasswdCode',//忘记密码验证码,修改密码
@@ -30,6 +32,8 @@ let axiosHttp={
   couponsBag:process.env.API_ROOT+'v3/hyvip/userTicketRest/listTicketByUserId',//券包
 
   order:process.env.API_ROOT+'v3/hyvip/mallOrederRest/listOrderByUser',//订单
+
+  vipKid:process.env.API_ROOT+'v3/hyvip/goodsRest/saveVipKidOrder',//VIPKID
 
 
   getFn:(url,params)=>{
@@ -41,6 +45,11 @@ let axiosHttp={
   postFn:(url,params)=>{
 
     return axios.post(`${url}`, qs.stringify(params)).then(res => res)
+  },
+
+  JsonPostFn:(url,params)=>{
+
+    return axios.post(`${url}`, JSON.stringify(params)).then(res => res)
   }
 
 }
