@@ -13,7 +13,7 @@ var orderFn={
     var needTranslateX=-parseFloat(num)*thisWindowWidth;
 
 
-    document.documentElement.scrollTop=0
+    document.documentElement.scrollTop=0;
 
     tabChangeContent.style.transform="translate3d("+needTranslateX+"px,0,0)";
 

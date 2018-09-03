@@ -156,7 +156,7 @@
       overflow: auto;
       margin-top: 15px;
 
-      >a{
+      a{
         display: inline-block;
         color: #4a4a4a;
         width: 40%;
@@ -224,15 +224,15 @@
 
      .product_list {
        margin-top: 0;
-       height: auto;
-
-       >a{
+       height: calc(~'100vh - 15px');
+       position: relative;
+       a{
          width: 45%;
          width: calc(~"(100vw - 35px)/2");
          margin-bottom: 10px;
          margin-right: 9px;
 
-         &:nth-child(odd){
+         &:nth-child(even){
            margin-left: 11px;
          }
 

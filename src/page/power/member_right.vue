@@ -27,27 +27,27 @@
         </div>
         <p>积分兑换</p>
       </a>
-      <a href="#/member_bag" :class="userData.userLevel==1?'locked':''">
-        <div class="power_img">
+      <a href="#/member_bag">
+        <div class="power_img" :class="userData.userLevel==1?'lock_power':''">
           <img src="../../../static/images/icon_gift.png">
         </div>
         <p>会员礼包</p>
       </a>
-      <a href="#/upgrade_awards" :class="userData.userLevel==1?'locked':''">
-        <div class="power_img">
+      <a href="#/upgrade_awards">
+        <div class="power_img" :class="userData.userLevel==1?'lock_power':''">
           <img src="../../../static/images/icon_upgrade_awards.png">
         </div>
         <p>升级奖励</p>
       </a>
-      <a href="#/birthday" :class="userData.userLevel==1?'locked':''">
-        <div class="power_img">
+      <a href="#/birthday">
+        <div class="power_img" :class="userData.userLevel==1?'lock_power':''">
           <img src="../../../static/images/icon_birthday_privileges.png">
         </div>
         <p>生日特权</p>
       </a>
 
-      <a :class="userData.userLevel==1?'locked':''"  @click="customerFn">
-        <div class="power_img lock_power">
+      <a @click="customerFn">
+        <div class="power_img" :class="userData.userLevel==1?'lock_power':''">
           <img src="../../../static/images/icon_customer_service.png">
         </div>
         <p>专属客服</p>
@@ -128,9 +128,16 @@
 
     },
 
+
+
     methods:{
       customerFn(){
 
+        if(this.userData.userLevel==1){
+
+          return false
+
+        }
 
         MemberCustomer.click();
 

@@ -7,7 +7,7 @@
 
       <div class="box_name member_center">
         <p>领取新人专享券</p>
-        <span onclick="boxShow.checkHide()">x</span>
+        <span  @click="getCoupons">x</span>
       </div>
 
       <ul class="main_box">
@@ -87,7 +87,7 @@
 
       </ul>
 
-      <div class="close_btn" onclick="boxShow.checkHide('homepage_coupons')"><button>确认</button></div>
+      <div class="close_btn" @click="getCoupons"><button>确认</button></div>
     </div>
 
     <div class="box_shadow"></div>
@@ -101,6 +101,9 @@
 
 
 <script>
+
+  import API from '../../assets/api'
+
   export default {
 
     name:'coupons',
@@ -109,11 +112,41 @@
 
       return{
 
+        userData:{
+          userId:''
+        }
       }
     },
 
     mounted(){
-     // boxShow.checkShow('homepage_coupons');
+
+      this.userData=JSON.parse(localStorage.getItem('userData'));
+    },
+
+    methods:{
+
+      getCoupons(){
+
+        API.getFn(API.modifyLogin,{userId:this.userData.userId})
+
+          .then(function (res) {
+
+            if(res.data.code=='00000'){
+
+              boxShow.checkHide('homepage_coupons')
+
+            }else {
+
+              jfShowTips.toastShow({'text':res.data.message})
+            }
+
+          }.bind(this))
+          .catch(function (error) {
+
+          }.bind(this))
+
+      }
+
     }
   }
 </script>

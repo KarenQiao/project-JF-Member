@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 0 5px 1px #ddd;
 
     p{
       position: relative;
@@ -49,11 +50,28 @@
   .order_box{
     width: 100%;
     transition: transform 0.2s ease-in-out;
+    height: calc(100vh);
 
     .box{
       width: 100%;
       height: 100%;
       flex: 1;
+
+      >p.tickets_none{
+        text-align: center;
+        margin-top: 140px;
+
+        img{
+          width: 60px;
+          height: 60px;
+          display: block;
+          margin: 10px auto;
+        }
+
+        span{
+          color: #ababab;
+        }
+      }
 
 
       .order_list{

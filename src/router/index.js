@@ -39,6 +39,15 @@ export default new Router({
     },
 
     {
+      path: '/setPasd',
+      name: 'setPasd',
+      meta:{
+        title:'设置密码'
+      },
+      component: resolve => require(['@/page/Login/setPasd'], resolve)
+    },
+
+    {
       path: '/accountSafety',
       name: 'accountSafety',
       meta:{
@@ -189,10 +198,30 @@ export default new Router({
       },
       component:resolve=>require(['@/page/personCenter/my_cardbag'],resolve)
 
+    },
+
+    {
+      path:'/vipkid',
+      name:'vipkids',
+      meta:{
+        title:'VIPKID'
+      },
+      component:resolve=>require(['@/page/classification/VIPKID'],resolve)
+
     }
 
 
 
 
-  ]
+  ],
+
+  scrollBehavior (to, from, savedPosition) {
+
+    jfShowTips.loadingRemove();
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
