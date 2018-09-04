@@ -28,6 +28,9 @@ Vue.use(wcSwiper);
 
 
 
+import VueScroller from 'vue-scroller'
+Vue.use(VueScroller);
+
 
 /* eslint-disable no-new */
 new Vue({

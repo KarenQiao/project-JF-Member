@@ -5,26 +5,27 @@
     <div class="fixed_top_bar">
       <div class="bar"></div>
       <div class="all_tab yao_shadow">
-        <p class="show" onclick="orderFn.tabChange(0)" @click="getInitList(30)">未使用</p>
-        <p onclick="orderFn.tabChange(1)" @click="getInitList(40)">已使用</p>
-        <p onclick="orderFn.tabChange(2)" @click="getInitList(50)">已过期</p>
+        <p class="show" @click="changeTabFn(0,30)">未使用</p>
+        <p @click="changeTabFn(1,40)">已使用</p>
+        <p @click="changeTabFn(2,50)">已过期</p>
 
       </div>
     </div>
 
-    <div class="my_order_page">
+    <div class="my_order_page cardbag_box">
 
 
       <div class="order_box card_box member_start_start">
 
         <div class="all box">
-          <!--  <data-list :dataList="datasList"></data-list>-->
-            <!--优惠券-->
-            <div class="card_bag_plate">
 
-              <p v-if="dataList.length==0||!dataList"></p>
+          <div class="card_bag_plate" v-if="dataList.length!=0">
 
-              <div v-else  v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+
+              <scroller style="padding-top: 15px" :on-infinite="infinite" :on-refresh="refresh" ref="my_scroller"  class="my-scroller"  refresh-layer-color="#bb9966" no-data-text="没有更多啦~">
+
+
+              <div  v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
 
                 <div class="card_left">
                   <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
@@ -52,9 +53,14 @@
 
               </div>
 
-              <!--<p v-show="dataList.length==0">暂无未使用的优惠券</p>-->
+            </scroller>
 
             </div>
+
+          <p v-show="ticketsNone" class="tickets_none">
+            <img src="../../../static/images/noTickets.png">
+            <span>暂无未使用的优惠券</span>
+          </p>
 
         </div>
 
@@ -62,11 +68,11 @@
         <div class="used box">
 
               <!--优惠券-->
-            <div class="card_bag_plate">
+            <div class="card_bag_plate" v-if="dataList.length!=0" >
 
-              <p v-if="usedList.length==0">暂无已使用的优惠券</p>
+              <scroller style="padding-top: 15px" :on-infinite="infinite" :on-refresh="refresh" ref="my_scroller"  class="my-scroller"  refresh-layer-color="#bb9966" no-data-text="没有更多啦~">
 
-              <div v-else="" v-for="item in usedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+              <div v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
 
                 <div class="card_left">
                   <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
@@ -96,7 +102,15 @@
 
               </div>
 
+              </scroller>
+
             </div>
+
+          <p v-show="ticketsNone" class="tickets_none">
+            <img src="../../../static/images/noTickets.png">
+            <span>暂无已使用的优惠券</span>
+          </p>
+
 
         </div>
 
@@ -104,9 +118,12 @@
         <!--待收货-->
         <div class="dated box">
 
-        <div class="card_bag_plate">
+        <div class="card_bag_plate" v-if="dataList.length!=0">
 
-            <div  v-if="datedList.length!=0" v-for="item in datedList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
+          <scroller style="padding-top: 15px" :on-infinite="infinite" :on-refresh="refresh" ref="my_scroller"  class="my-scroller"  refresh-layer-color="#bb9966" no-data-text="没有更多啦~">
+
+
+          <div   v-for="item in dataList"  :class="item.ticketType==30?'mianxi_card':'youhui_card'">
 
               <div class="card_left">
                 <p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p>
@@ -135,9 +152,16 @@
 
 
             </div>
-          <p v-show="datedList.length==0">暂无已过期的优惠券</p>
+
+          </scroller>
 
           </div>
+
+
+          <p v-show="ticketsNone" class="tickets_none">
+            <img src="../../../static/images/noTickets.png">
+            <span>暂无已过期的优惠券</span>
+          </p>
 
         </div>
 
@@ -156,17 +180,8 @@
 
   import API from '../../assets/api'
 
-  /*let allList={
-
-    template: '<div class="card_bag_plate">' +
-    '<p v-if="dataList.length==0||!dataList">暂无未使用的优惠券</p>' +
-    '<div v-else v-for="item in dataList" ><div class="card_left"><p class="left_top_font" v-if="item.ticketType==10"><span>{{item.amt}}</span><span class="left_top_small">元优惠券</span></p><p class="left_top_font" v-else-if="item.ticketType==20"><span>{{item.amt}}</span><span class="left_top_small">折</span></p><p class="left_top_font" v-else="item.ticketType==30"><span>{{item.amt}}</span><span class="left_top_small">免息券</span></p><p class="left_bottom_font"><span>有效期：</span><span>{{item.validityStart|time}}-{{item.validityEnd|time}}</span></p></div><div class="card_right" v-if="item.ticketType==30"><div class="card_logo_plate"><img src="../../../static/images/img_iou_logo.png"></div></div><div class="card_right" v-else=""><p class="left_top_small">全品类</p><p class="left_bottom_font">{{item.ticketMarketingValue}}</p></div></div></div>',
-
-  };*/
-
-
-
   export default {
+
     name:'cardBag',
 
     data(){
@@ -176,11 +191,14 @@
 
         dataList:[],
 
-        usedList:[],
+        state:'30',//30未使用，40已经使用，50已过期
 
-        datedList:[],
+        ticketsNone:false,
 
-        state:'',//30未使用，40已经使用，50已过期
+        noData:true,
+
+        page:1,
+
 
       }
     },
@@ -193,32 +211,29 @@
 
       this.mobileNo=userData.mobileNo;
 
-      this.getInitList(30);
+      this.getInitList(this.state,this.page);
 
     },
 
- /*   components:{
-
-      'dataList':allList
-
-    },*/
-
-   /* props:{
-
-      dataList:{
-        type:Array
-      }
-    },*/
 
     methods:{
 
-      getInitList(num){
+      getInitList(num,pageNo){
 
-        jfShowTips.loadingShow()
+        this.ticketsNone=false;
+
+        if(pageNo==1){
+
+          jfShowTips.loadingShow()
+
+        }
+
         let params={
           userId:this.userId,
 
-          state:num
+          state:num,
+
+          page:pageNo
         };
 
         API.postFn(API.couponsBag,params).then(function (res) {
@@ -229,21 +244,29 @@
 
           if(res.data.code=='000000'){
 
-            if(num==30){
 
-              this.dataList=res.data.ticketList;
+            if(res.data.ticketList==0&&pageNo==1){
 
-            }else if(num==40){
+              this.ticketsNone=true;
 
-              this.usedList=res.data.ticketList;
-            }else {
-
-              this.datedList=res.data.ticketList;
+              return false
             }
 
+            for(var i=0; i<res.data.ticketList.length;i++){
 
+              this.dataList.push(res.data.ticketList[i])
 
-            console.log(res.data.ticketList)
+            }
+
+            if(res.data.ticketList.length<10){
+
+              this.noData = true;
+
+            }else {
+
+              this.noData = false;
+            }
+
 
           }else {
 
@@ -257,7 +280,79 @@
 
           }.bind(this))
 
+      },
+
+      refresh(done){
+
+        console.log('下拉刷新')
+
+        let self = this;//this指向问题
+
+        setTimeout(function () {
+
+          self.dataList=[];
+
+          self.page=1;
+
+          self.getInitList(self.state,self.page);
+
+          self.noData = true;
+
+          done(true)
+
+        },1000)
+      },
+
+      infinite(done) {
+
+        console.log('上拉加载1')
+
+        console.log('noData='+this.noData)
+
+        if(this.noData){
+
+          setTimeout(() => {
+
+            console.log('无法上啦加载~结束')
+
+            this.$refs.my_scroller.finishInfinite(false);
+
+            done(true)
+
+          });
+          return false;
+        }
+
+        let self = this;//this指向问题
+
+        setTimeout(() => {
+
+          console.log('上拉加载')
+
+          self.page+=1;
+
+          self.getInitList(self.state,self.page);
+
+          self.$refs.my_scroller.resize();
+
+          done(true)
+
+        }, 1500)
+      },
+
+      changeTabFn(num,state){
+
+        orderFn.tabChange(num);
+
+        this.page=1;
+
+        this.state=state;
+
+        this.dataList=[];
+
+        this.getInitList(this.state,this.page);
       }
+
 
     }
   }

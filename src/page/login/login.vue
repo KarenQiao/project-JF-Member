@@ -100,6 +100,8 @@
 
             localStorage.setItem('userData',JSON.stringify(res.data.data));
 
+            localStorage.setItem('firstLogin',res.data.data.firstLogin);
+
             this.$router.push('/homepage')
 
 

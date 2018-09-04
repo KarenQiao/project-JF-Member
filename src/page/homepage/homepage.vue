@@ -104,7 +104,9 @@
 
           total:'',
 
-          level:''
+          level:'',
+
+          firstLogin:''
 
         },
 
@@ -146,10 +148,27 @@
 
     this.userData=JSON.parse(localStorage.getItem('userData'));
 
-
-   // this.getBannerList();
-
     this.getColumn();
+
+    if(localStorage.getItem('firstLogin')==0){
+
+      boxShow.checkShow('homepage_coupons');
+
+      localStorage.setItem('firstLogin',1);
+
+    }
+
+
+
+    //boxShow.checkShow('homepage_coupons');
+
+    },
+
+    updated(){
+
+    console.log(localStorage.getItem('firstLogin'));
+
+
 
     },
 
@@ -187,7 +206,6 @@
         }.bind(this))
 
     },
-
 
       //获取栏目
       getColumn:function () {

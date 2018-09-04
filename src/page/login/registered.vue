@@ -180,12 +180,18 @@
 
               jfShowTips.toastShow({'text':'注册成功'});
 
+             localStorage.setItem('userData',JSON.stringify(res.data.data));
+
+             localStorage.setItem('firstLogin',res.data.data.firstLogin);
+
 
              var _this=this;
 
+
              setTimeout(function () {
-               _this.$router.push('/')
+               _this.$router.push('/homepage')
              },300)
+
 
             }else {
 

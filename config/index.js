@@ -12,8 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://jq.jiabaitiao.cn/',//设置你调用的接口域名和端口号
-      //  target:'http://116.62.199.212:8089/',
+      //  target: 'http://116.62.199.212:7988/',//设置你调用的接口域名和端口号
+        target:'http://jhyvip.tao-lue.com/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/'
@@ -22,7 +22,7 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '192.168.120.39', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
