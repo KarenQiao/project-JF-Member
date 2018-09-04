@@ -271,6 +271,16 @@ export default new Router({
     },
 
     {
+      path:'/delicateLife',
+      name:'精致生活',
+      meta:{
+        title:'精致生活'
+      },
+      component:resolve=>require(['@/page/classification/delicate_life'],resolve)
+
+    },
+
+    {
       path:'/help',
       name:'帮助中心',
       meta:{
