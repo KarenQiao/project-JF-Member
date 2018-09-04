@@ -1,0 +1,148 @@
+.menber_online_banner {
+  width: 100%;
+  height: calc(~"100vw/750*1144");
+  background-image: url("../images/img_online_top.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.member_online_plate {
+  width: 100%;
+  background-color: #f5f1eb;
+  padding: 20px 0;
+
+  .youhui_card {
+    height: 98px;
+    margin-bottom: 0;
+
+    @media (min-width: 412px) {
+      height: 110px;
+    }
+
+    @media (max-width: 320px) {
+      height: 85px;
+    }
+
+    &:before {
+      height: 98px;
+      background-image: url("../images/img_member_online_card.png");
+
+      @media (min-width: 412px) {
+        height: 110px;
+      }
+
+      @media (max-width: 320px) {
+        height: 85px;
+      }
+
+    }
+
+  }
+
+  .left_bottom_font {
+
+    @media (max-width: 320px) {
+      font-size: 10px;
+    }
+
+    span {
+      &:first-child {
+        @media (max-width: 320px) {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .left_top_font {
+    @media (max-width: 320px) {
+      font-size: 20px;
+    }
+  }
+
+}
+
+.card_top_font {
+  padding: 0 50px;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: 320px) {
+    padding: 0 30px;
+  }
+
+  p {
+    color: #4a4a4a;
+    font-size: 16px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 70px;
+      height: 17px;
+      left: 0;
+      top: 6px;
+      background-image: url("../images/img_top_left.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      @media (max-width: 320px) {
+        width: 65px;
+      }
+
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 70px;
+      height: 17px;
+      right: 0;
+      top: 6px;
+      background-image: url("../images/img_top_double.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      @media (max-width: 320px) {
+        width: 65px;
+      }
+
+    }
+
+  }
+
+}
+
+.card_number {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 35px;
+    height: 25px;
+    right: 4px;
+    top: 4px;
+    background-image: url("../images/icon_card_number.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+}
+
+.bottom_btn {
+  color: #bb9966;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  background-color: #000000;
+}

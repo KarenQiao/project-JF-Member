@@ -208,6 +208,86 @@ export default new Router({
       },
       component:resolve=>require(['@/page/classification/VIPKID'],resolve)
 
+    },
+
+    {
+      path:'/camera',
+      name:'主编推荐-相机',
+      meta:{
+        title:'主编推荐'
+      },
+      component:resolve=>require(['@/page/classification/editor_camera'],resolve)
+
+    },
+
+    {
+      path:'/headset',
+      name:'主编推荐-耳机',
+      meta:{
+        title:'主编推荐'
+      },
+      component:resolve=>require(['@/page/classification/editor_headset'],resolve)
+
+    },
+
+    {
+      path:'/tachograph',
+      name:'主编推荐-行车记录仪',
+      meta:{
+        title:'主编推荐'
+      },
+      component:resolve=>require(['@/page/classification/editor_tachograph'],resolve)
+
+    },
+
+    {
+      path:'/hotel',
+      name:'酒店',
+      meta:{
+        title:'温德姆酒店'
+      },
+      component:resolve=>require(['@/page/classification/hotel'],resolve)
+
+    },
+
+    {
+      path:'/kelefu',
+      name:'客乐芙',
+      meta:{
+        title:'客乐芙'
+      },
+      component:resolve=>require(['@/page/classification/kelefu'],resolve)
+
+    },
+
+    {
+      path:'/travel',
+      name:'亲密时光',
+      meta:{
+        title:'亲密时光'
+      },
+      component:resolve=>require(['@/page/classification/travel'],resolve)
+
+    },
+
+    {
+      path:'/help',
+      name:'帮助中心',
+      meta:{
+        title:'帮助中心'
+      },
+      component:resolve=>require(['@/page/personCenter/help'],resolve)
+
+    },
+
+    {
+      path:'/memberOnline',
+      name:'嘉会员上线',
+      meta:{
+        title:'嘉会员上线'
+      },
+      component:resolve=>require(['@/page/classification/jia_member_online'],resolve)
+
     }
 
 
