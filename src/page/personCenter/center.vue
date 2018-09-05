@@ -48,7 +48,7 @@
 
       </a>
 
-      <a class="member_between_center">
+      <a class="member_between_center" @click="$router.push('/help')">
         <p><img src="../../../static/images/icon_mine_help.png"><span>帮助中心</span></p>
 
       </a>

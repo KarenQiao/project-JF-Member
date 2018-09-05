@@ -44,7 +44,7 @@
         <wc-swiper v-if="activeBanner.length>0"  :autoplay="false">
           <wc-slide v-for="(item,key) in activeBanner" :key="key">
 
-            <a>
+            <a :href="item.url">
               <img v-lazy="item.theFigureUrl">
             </a>
           </wc-slide>
@@ -58,8 +58,6 @@
     </div>
 
     <member-footer :showObj="[true,false,false]"></member-footer>
-
-    <coupons-box></coupons-box>
 
     <active-box></active-box>
 
@@ -83,7 +81,7 @@
 
   import newProduct from '../../components/homepage/newPro.vue'
 
-  import couponsBox from '../../components/homepage/coupons.vue'
+ // import couponsBox from '../../components/homepage/coupons.vue'
 
   import activeBox from '../../components/homepage/activeBox.vue'
 
@@ -140,7 +138,7 @@
       'editStory':editorStory,
       'newProduct':newProduct,
       'memberFooter':memberFooter,
-      'couponsBox':couponsBox,
+     // 'couponsBox':couponsBox,
       'activeBox':activeBox
     },
 
@@ -150,16 +148,6 @@
 
     this.getColumn();
 
-    if(localStorage.getItem('firstLogin')==0){
-
-      boxShow.checkShow('homepage_coupons');
-
-      localStorage.setItem('firstLogin',1);
-
-    }
-
-
-
     //boxShow.checkShow('homepage_coupons');
 
     },
@@ -168,7 +156,13 @@
 
     console.log(localStorage.getItem('firstLogin'));
 
+      if(localStorage.getItem('firstLogin')==0){
 
+        boxShow.checkShow('active_box');
+
+        localStorage.setItem('firstLogin',1);
+
+      }
 
     },
 

@@ -13,7 +13,7 @@
         <span v-for="item in lifeList.slice(0,3)" >{{item.theTitle}}</span>
        <!-- <span class="showTab" >出游度假</span>
         <span>潮流风向</span>-->
-        <a class="moreTab" @click="$router.push('/memberLife/'+lifeTitle.id)">更多</a>
+       <!-- <a class="moreTab" @click="$router.push('/memberLife/'+lifeTitle.id)">更多</a>-->
       </div>
 
       <div class="moveArea ">
