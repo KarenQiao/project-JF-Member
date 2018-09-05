@@ -24,6 +24,8 @@
         <input type="password" placeholder="请再次确认密码" v-model="rePassword" maxlength="20"/>
       </label>
 
+      <p class="pasd_tips">密码长度6~16位，数字、字母、字符至少包含两种</p>
+
 
       <div>
         <button class="go_register" @click="checkFn">立即注册</button>
