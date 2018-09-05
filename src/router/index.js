@@ -211,6 +211,26 @@ export default new Router({
     },
 
     {
+      path:'/agreement',
+      name:'agreement',
+      meta:{
+        title:'VIPKID用户注册协议'
+      },
+      component:resolve=>require(['@/page/classification/vip_English_agreement'],resolve)
+
+    },
+
+    {
+      path:'/privacy-agreement',
+      name:'privacy-agreement',
+      meta:{
+        title:'用户隐私协议'
+      },
+      component:resolve=>require(['@/page/classification/privacy_agreement'],resolve)
+
+    },
+
+    {
       path:'/camera',
       name:'主编推荐-相机',
       meta:{
@@ -308,10 +328,10 @@ export default new Router({
   scrollBehavior (to, from, savedPosition) {
 
     jfShowTips.loadingRemove();
-    if (savedPosition) {
+  /*  if (savedPosition) {
       return savedPosition
-    } else {
+    } else {*/
       return { x: 0, y: 0 }
-    }
+   // }
   }
 })

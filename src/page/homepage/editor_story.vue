@@ -4,7 +4,7 @@
   <div class="Jf_Member_Homepage all_edit_story">
     <div class="editor_reccomed normal_title">
       <div class="reccomed_list">
-        <a class="member_left_center" v-for="item in dataList">
+        <a class="member_left_center" v-for="item in dataList" :href="item.url">
 
           <p class="pic"> <img v-lazy="item.theFigureUrl"></p>
 
