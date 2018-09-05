@@ -373,3 +373,32 @@
   </div>
 
 </template>
+
+
+<script>
+
+  export default {
+
+    data() {
+      return{
+
+        id:'',
+
+        page:1,
+
+      }
+    },
+
+    mounted(){
+
+      this.id=this.$route.params.id;
+
+      console.log(this.id)
+
+
+    },
+
+  }
+
+</script>
+
