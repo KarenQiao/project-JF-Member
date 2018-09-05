@@ -44,7 +44,7 @@
         <wc-swiper v-if="activeBanner.length>0"  :autoplay="false">
           <wc-slide v-for="(item,key) in activeBanner" :key="key">
 
-            <a :href="item.url">
+            <a :href="item.url+'/'+item.id">
               <img v-lazy="item.theFigureUrl">
             </a>
           </wc-slide>
@@ -147,8 +147,6 @@
     this.userData=JSON.parse(localStorage.getItem('userData'));
 
     this.getColumn();
-
-    //boxShow.checkShow('homepage_coupons');
 
     },
 
