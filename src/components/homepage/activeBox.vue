@@ -3,11 +3,17 @@
   <div class="active_box" @click="getCoupons">
 
     <div class="main_box">
-      <!--<span>x</span>
+      <div class="popup_logo_plate"><img src="../../../static/images/img_popup_logo.png"/></div>
+
+      <p class="popup_welcome_font">嘉会员欢迎您</p>
+
+      <p class="popup_welcome_details">价值￥<span>6000</span>优惠券</p>
+
+      <p class="popup_welcome_content">价值￥<span>6000</span>优惠券</p>
 
       <div class="check_btn">
-        <button onclick="boxShow.checkHide('active_box');boxShow.checkShow('homepage_coupons')">确认</button>
-      </div>-->
+        <button onclick="boxShow.checkHide('active_box');boxShow.checkShow('homepage_coupons')">即刻激活领取</button>
+      </div>
     </div>
 
     <div class="box_shadow"></div>
