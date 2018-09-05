@@ -61,18 +61,7 @@
 
 <style lang="less">
 
-  .wc-slide{
 
-    position: relative;
-  }
-
-  .wc-pagination .wc-dot-active{
-    background: #bb9966;
-  }
-
-  .wc-swiper-container{
-    height: 100%;
-  }
 
 </style>
 
