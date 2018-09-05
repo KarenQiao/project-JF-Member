@@ -8,7 +8,7 @@
 
     <div class="reccomed_list">
 
-    <a class="member_left_center" v-for="(item,index) in editList.slice(0,2)" :href="item.url">
+    <a class="member_left_center" v-for="(item,index) in editList.slice(0,2)" :href="item.url+'/'+item.id">
         <p class="pic"> <img v-lazy="item.theFigureUrl"></p>
 
         <p>

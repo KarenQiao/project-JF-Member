@@ -1,7 +1,7 @@
 <template>
   <div class="all_member_life">
 
-    <a class="life_list" v-for="item in dataList">
+    <a class="life_list" v-for="item in dataList" :href="item.url+'/'+item.id">
         <p>{{item.theTitle}}</p>
         <p>{{item.subtitle}}</p>
       <div>
@@ -131,7 +131,6 @@
           if(res.data.code='00000'){
 
             this.dataList=res.data.list;
-
 
           }
 

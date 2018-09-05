@@ -17,7 +17,7 @@
       </div>
 
       <div class="moveArea ">
-        <a v-for="item in lifeList" :href="item.url">
+        <a v-for="item in lifeList" :href="item.url+'/'+item.id">
           <img v-lazy="item.theFigureUrl">
         </a>
        <!-- <a class="showArea"> <img src="../../../static/images/life2.png"></a>

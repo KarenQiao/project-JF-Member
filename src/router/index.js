@@ -231,7 +231,7 @@ export default new Router({
     },
 
     {
-      path:'/camera',
+      path:'/camera/:id',
       name:'主编推荐-相机',
       meta:{
         title:'主编推荐'
@@ -241,7 +241,7 @@ export default new Router({
     },
 
     {
-      path:'/headset',
+      path:'/headset/:id',
       name:'主编推荐-耳机',
       meta:{
         title:'主编推荐'
@@ -251,7 +251,7 @@ export default new Router({
     },
 
     {
-      path:'/tachograph',
+      path:'/tachograph/:id',
       name:'主编推荐-行车记录仪',
       meta:{
         title:'主编推荐'
@@ -261,7 +261,7 @@ export default new Router({
     },
 
     {
-      path:'/hotel',
+      path:'/hotel/:id',
       name:'酒店',
       meta:{
         title:'温德姆酒店'
@@ -271,7 +271,7 @@ export default new Router({
     },
 
     {
-      path:'/kelefu',
+      path:'/kelefu/:id',
       name:'客乐芙',
       meta:{
         title:'客乐芙'
@@ -281,7 +281,7 @@ export default new Router({
     },
 
     {
-      path:'/travel',
+      path:'/travel/:id',
       name:'亲密时光',
       meta:{
         title:'亲密时光'
@@ -291,7 +291,7 @@ export default new Router({
     },
 
     {
-      path:'/delicateLife',
+      path:'/delicateLife/:id',
       name:'精致生活',
       meta:{
         title:'精致生活'
