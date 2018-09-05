@@ -16,7 +16,7 @@
 
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_locked.png"></span>
-        <input type="password" placeholder="请输入薪密码" maxlength="20" v-model="newPwd"/>
+        <input type="password" placeholder="请输入新密码" maxlength="20" v-model="newPwd"/>
       </label>
 
       <label class="member_left_center">
