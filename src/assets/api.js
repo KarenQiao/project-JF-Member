@@ -53,7 +53,13 @@ let axiosHttp={
   JsonPostFn:(url,params,config)=>{
 
     return axios.post(`${url}`, JSON.stringify(params),config).then(res => res)
-  }
+  },
+
+  deleteFn:(url,params)=>{
+
+    return axios.delete(`${url}`, {params: params}).then(res => res)
+
+  },
 
 }
 
