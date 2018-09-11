@@ -56,6 +56,13 @@
     </div>
 
 
+    <div class="center_list" @click="loginOut">
+      <a class="member_between_center">
+        <p><img src="../../../static/images/icon_loginout.png"><span>退出登录</span></p>
+      </a>
+    </div>
+
+
     <member-footer :showObj="[false,false,true]"></member-footer>
 
 
@@ -84,6 +91,30 @@
     mounted(){
 
       this.userData=JSON.parse(localStorage.getItem('userData'))
+
+
+    },
+
+    methods:{
+
+      loginOut(){
+
+        jfShowTips.dialogShow({
+
+          'mainText':'确认退出登录',
+
+          checkFn:function () {
+
+            jfShowTips.dialogRemove();
+
+          }
+
+        })
+      },
+
+      checkOut(){
+
+      }
 
 
     }

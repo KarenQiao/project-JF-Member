@@ -13,6 +13,8 @@ let axiosHttp={
 
   listTheme:process.env.API_ROOT+'v3/hyvip/goodsRest/listTheme',//更多主题
 
+  themeGoods:process.env.API_ROOT+'v3/hyvip/goodsRest/lisThemeDetail',//更多主题商品
+
   goodList:process.env.API_ROOT+'v3/hyvip/goodsRest/listGoods',//更多商品
 
   register:process.env.API_ROOT+'v3/hysec/users',//注册
@@ -36,20 +38,21 @@ let axiosHttp={
   vipKid:process.env.API_ROOT+'v3/hyvip/goodsRest/saveVipKidOrder',//VIPKID
 
 
+
   getFn:(url,params)=>{
 
     return axios.get(`${url}`, {params: params}).then(res => res)
 
   },
 
-  postFn:(url,params)=>{
+  postFn:(url,params,config)=>{
 
-    return axios.post(`${url}`, qs.stringify(params)).then(res => res)
+    return axios.post(`${url}`, qs.stringify(params),config).then(res => res)
   },
 
-  JsonPostFn:(url,params)=>{
+  JsonPostFn:(url,params,config)=>{
 
-    return axios.post(`${url}`, JSON.stringify(params)).then(res => res)
+    return axios.post(`${url}`, JSON.stringify(params),config).then(res => res)
   }
 
 }

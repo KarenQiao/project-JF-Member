@@ -49,8 +49,24 @@
 
         username:'',
 
-        pasd:''
+        pasd:'',
       }
+    },
+
+    mounted(){
+
+      console.log('登录')
+
+      let token = localStorage.getItem('userToken');
+
+      let userData=JSON.parse(localStorage.getItem('userData'));
+
+      if (userData&&token) {
+
+        this.$router.push('/homepage');
+
+      }
+
     },
 
     methods:{
@@ -101,6 +117,8 @@
             localStorage.setItem('userData',JSON.stringify(res.data.data));
 
             localStorage.setItem('firstLogin',res.data.data.firstLogin);
+
+            localStorage.setItem('userToken',res.data.data.sessionKey);
 
             this.$router.push('/homepage')
 

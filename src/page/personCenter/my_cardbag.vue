@@ -47,7 +47,7 @@
 
                   <p class="left_top_small">全品类</p>
 
-                  <p class="left_bottom_font">{{item.ticketMarketingValue}}</p>
+                  <p class="left_bottom_font">{{item.ticketMarketingValueStr}}</p>
                 </div>
 
 
@@ -94,7 +94,7 @@
 
                   <p class="left_top_small">全品类</p>
 
-                  <p class="left_bottom_font">{{item.ticketMarketingValue}}</p>
+                  <p class="left_bottom_font">{{item.ticketMarketingValueStr}}</p>
 
                   <span class="status_tips">已使用</span>
                 </div>
@@ -145,9 +145,9 @@
 
                 <p class="left_top_small">全品类</p>
 
-                <p class="left_bottom_font">{{item.ticketMarketingValue}}</p>
+                <p class="left_bottom_font">{{item.ticketMarketingValueStr}}</p>
 
-                <span class="status_tips">已使用</span>
+                <span class="status_tips">已过期</span>
               </div>
 
 
@@ -229,14 +229,19 @@
         }
 
         let params={
-          userId:this.userId,
+        //  userId:this.userId,
 
           state:num,
 
           page:pageNo
         };
 
-        API.postFn(API.couponsBag,params).then(function (res) {
+
+        let config = {
+          headers: {'Content-Type':'application/json;charset=UTF-8'}
+        };
+
+        API.JsonPostFn(API.couponsBag,params,config).then(function (res) {
 
           jfShowTips.loadingRemove();
 

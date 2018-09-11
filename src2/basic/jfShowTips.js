@@ -226,7 +226,7 @@ let jfShowTips = {
 
         var mainText = details.mainText || 'null';
 
-        var minText = details.minText || 'null';
+        var minText = details.minText || '';
 
         var hasCheck = details.noCheck|| false;
 
@@ -243,11 +243,19 @@ let jfShowTips = {
 
         var _this=this;
 
-        _this.addBlur();
 
         var thisBg=_this.addBg('dialog_bg');
 
-        var thisInnerHtml='<div class="text_dialog_container"><div class="text_big">'+mainText+'</div><div class="text_small">'+minText+'</div><div class="dialog_button">';
+        var thisInnerHtml='<div class="text_dialog_container"><div class="text_big">'+mainText+'</div>';
+
+        if(minText){
+
+
+          thisInnerHtml+='<div class="text_small">'+minText+'</div>'
+        }
+
+      thisInnerHtml+='<div class="dialog_button">';
+
 
         if(!hasCheck){
 

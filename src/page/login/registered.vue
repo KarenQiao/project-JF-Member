@@ -186,6 +186,8 @@
 
              localStorage.setItem('firstLogin',res.data.data.firstLogin);
 
+             localStorage.setItem('userToken',res.data.data.sessionKey);
+
 
              var _this=this;
 
