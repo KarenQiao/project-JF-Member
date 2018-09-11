@@ -44,7 +44,7 @@
             </div>
 
             <div class="total">
-              总共<span>{{item.shopNum}}</span>件商品，合计<span>￥800.00</span> 包含运费<span>￥{{item.extraMoney}}</span>
+              总共<span>{{item.shopNum}}</span>件商品，合计<span>￥{{item.actualMoney}}</span> 包含运费<span>￥{{item.extraMoney}}</span>
             </div>
           </a>
 

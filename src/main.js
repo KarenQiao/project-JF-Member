@@ -5,17 +5,16 @@ import App from './App'
 import router from './router'
 import axios from './assets/axios'
 import filter from './assets/filter'
-
 import VueWechatTitle from 'vue-wechat-title'
-
 import VueLazyLoad from 'vue-lazyload'
+
+
+
 
 Vue.use(VueLazyLoad,{
   error:'./static/images/loading_big.jpg',
-  loading:'../static/images/loading_big.jpg'
+  loading:require('./assets/loading_big.jpg')
 })
-
-
 
 Vue.use(VueWechatTitle);
 
@@ -25,11 +24,42 @@ import wcSwiper from 'wc-swiper'
 import 'wc-swiper/style.css'
 Vue.use(wcSwiper);
 
-
-
-
 import VueScroller from 'vue-scroller'
 Vue.use(VueScroller);
+
+
+
+router.beforeEach((to, from, next) => {
+
+  var userInfo = localStorage.getItem('userData');
+
+  if(userInfo){
+
+
+/*    if (to.path&&to.name) {
+
+      next()
+
+    }else {
+
+      next({ path: '/homepage' })
+    }*/
+
+    next();
+
+  } else {
+
+    if(to.path=='/login'||to.path=='/registered'||to.path=='/forgetPasd'||to.path=='/setPasd'||to.path=='/'){
+
+      next();
+
+    } else {
+
+      next('/login');
+    }
+
+  }
+})
 
 
 /* eslint-disable no-new */

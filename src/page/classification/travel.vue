@@ -32,7 +32,7 @@
 
           <p>已节省：￥<span>12000</span></p>
 
-          <a class="buy_btn_right">立即购买</a>
+          <a class="buy_btn_right" :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
 
             <p>已节省：￥<span>12000</span></p>
 
-            <a class="buy_btn_left">立即购买</a>
+            <a class="buy_btn_left"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_04.png"></div>
@@ -88,7 +88,7 @@
 
           <p>已节省：￥<span>12000</span></p>
 
-          <a class="buy_btn_right">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -114,7 +114,7 @@
 
             <p>已节省：￥<span>12000</span></p>
 
-            <a class="buy_btn_left">立即购买</a>
+            <a class="buy_btn_left"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_04.png"></div>
@@ -144,7 +144,7 @@
 
           <p>已节省：￥<span>12000</span></p>
 
-          <a class="buy_btn_right">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
     </div>
@@ -180,7 +180,7 @@
 
           <p>已节省：￥<span>12000</span></p>
 
-          <a class="buy_btn_right">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -206,7 +206,7 @@
 
             <p>已节省：￥<span>12000</span></p>
 
-            <a class="buy_btn_left">立即购买</a>
+            <a class="buy_btn_left"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_04.png"></div>
@@ -245,7 +245,7 @@
 
           <p>已节省：￥<span>12000</span></p>
 
-          <a class="buy_btn_right">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -271,7 +271,7 @@
 
             <p>已节省：￥<span>12000</span></p>
 
-            <a class="buy_btn_left">立即购买</a>
+            <a class="buy_btn_left"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_04.png"></div>
@@ -301,7 +301,7 @@
 
           <p>已节省：￥<span>12000</span></p>
 
-          <a class="buy_btn_right">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
     </div>
@@ -337,7 +337,7 @@
 
           <p>已节省：￥<span>12000</span></p>
 
-          <a class="buy_btn_right">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -363,7 +363,7 @@
 
             <p>已节省：￥<span>12000</span></p>
 
-            <a class="buy_btn_left">立即购买</a>
+            <a class="buy_btn_left" :href="dataList.length>0?dataList[10].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_04.png"></div>
@@ -377,6 +377,8 @@
 
 <script>
 
+  import API from '../../assets/api'
+
   export default {
 
     data() {
@@ -386,6 +388,8 @@
 
         page:1,
 
+        dataList:[]
+
       }
     },
 
@@ -393,12 +397,51 @@
 
       this.id=this.$route.params.id;
 
-      console.log(this.id)
-
-
+      this.getUrl();
     },
+
+    methods:{
+
+      getUrl(){
+
+        let params={
+
+          themeId:this.id,
+
+        };
+
+        API.getFn(API.themeGoods,params)
+
+          .then(function (res) {
+
+            console.log(res);
+
+            if(res.data.code=='00000'){
+
+              this.dataList=res.data.list
+
+              console.log(this.dataList[0].url)
+
+            }else {
+
+              jfShowTips.toastShow({'text':res.data.message})
+            }
+          }.bind(this))
+
+          .catch(function (error) {
+
+          }.bind(this))
+
+
+
+      }
+
+
+
+    }
 
   }
 
 </script>
+
 

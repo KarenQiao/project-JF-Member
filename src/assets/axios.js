@@ -22,9 +22,10 @@ axios.interceptors.request.use(function (config){
 
   let token = localStorage.getItem('userToken');
 
+
   if (token !== null && token.toString().length > 1) {
 
-    config.headers.Authorization = token
+    config.headers.authorization = 'bearer'+' '+token
 
   }
 
@@ -37,7 +38,7 @@ axios.interceptors.request.use(function (config){
 
 axios.interceptors.response.use(function (res) {
 
- // jfShowTips.loadingRemove();
+  jfShowTips.loadingRemove();
 
   return res
 
@@ -45,11 +46,11 @@ axios.interceptors.response.use(function (res) {
 
   console.log(error);
 
-//  jfShowTips.loadingRemove();
+  jfShowTips.loadingRemove();
 
-  if(error.response.status=='400'){
+  if(error.response.status=='500'){
 
-   // jfShowTips.errorShow({'text': error.response.data.msg});
+    jfShowTips.toastShow({'text': error.response.data.error});
 
     console.log(error)
 
@@ -62,21 +63,19 @@ axios.interceptors.response.use(function (res) {
 
     return false
 
-  }else if(error.response.data.code=='3001'||error.response.data.code=='3003') {
+  }else if(error.response.data.code=='102'||error.response.data.code=='101') {
 
-    jfShowTips.errorShow({'text': error.response.data.msg});
+    jfShowTips.toastShow({'text': error.response.data.descrpition});
 
     localStorage.clear();
 
-
-
     setTimeout(function () {
 
-      router.push('/');
+      router.push('/login');
 
       window.location.reload();
 
-    },300)
+    },1500)
 
   }
 
