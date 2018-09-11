@@ -10,19 +10,19 @@
 
     <div class="headset_img_02"><img src="../../../static/images/headset/img_headset_03.png"/></div>
 
-    <a class="headset_img_03"><img src="../../../static/images/headset/img_headset_04.png"/></a>
+    <a class="headset_img_03" :href="dataList.length>0?dataList[0].url:''"><img src="../../../static/images/headset/img_headset_04.png"/></a>
 
     <div class="headset_img_04"><img src="../../../static/images/headset/img_headset_05.png"/></div>
 
     <div class="headset_img_02"><img src="../../../static/images/headset/img_headset_06.png"/></div>
 
-    <a class="headset_img_03"><img src="../../../static/images/headset/img_headset_08.png"/></a>
+    <a class="headset_img_03" :href="dataList.length>0?dataList[1].url:''"><img src="../../../static/images/headset/img_headset_08.png"/></a>
 
     <div class="headset_img_02"><img src="../../../static/images/headset/img_headset_07.png"/></div>
 
     <div class="headset_img_05"><img src="../../../static/images/headset/img_headset_09.png"/></div>
 
-    <a class="headset_img_03"><img src="../../../static/images/headset/img_headset_11.png"/></a>
+    <a class="headset_img_03" :href="dataList.length>0?dataList[2].url:''"><img src="../../../static/images/headset/img_headset_11.png"/></a>
 
     <div class="headset_img_02"><img src="../../../static/images/headset/img_headset_10.png"/></div>
 
@@ -34,6 +34,8 @@
 
 
 <script>
+
+  import API from '../../assets/api'
 
   export default {
 
@@ -53,6 +55,40 @@
 
 
     },
+
+    methods:{
+
+      getUrl(){
+
+        let params={
+
+          themeId:this.id,
+
+        };
+
+        API.getFn(API.themeGoods,params)
+
+          .then(function (res) {
+
+            console.log(res);
+
+            if(res.data.code=='00000'){
+
+            }
+
+          }.bind(this))
+
+          .catch(function (error) {
+
+          }.bind(this))
+
+
+
+      }
+
+
+
+    }
 
   }
 

@@ -10,7 +10,7 @@
 
     <div class="pro_list">
 
-      <a class="single_pro member_between_center" v-for="item in newPro.slice(0,1)">
+      <a class="single_pro member_between_center" v-for="item in newPro.slice(0,1)" :href="item.url">
 
         <div>
           <p class="pro_name">{{item.commodityName}}</p>

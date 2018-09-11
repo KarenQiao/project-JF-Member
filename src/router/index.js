@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 
-/*import loginPage from '@/components/login'*/
+import loginPage from '@/page/login/login'
 
 // 懒加载方式，当路由被访问的时候才加载对应组件
 
@@ -12,8 +12,24 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
+
+
+
+/*    {
       path: '/',
+      redirect: '/homepage',
+      name: '首页',
+      meta:{
+        title:'首页',
+
+      },
+      component: resolve=>require(['@/page/homepage/homepage'],resolve)
+    },*/
+
+
+
+    {
+      path: '/login',
       name: 'loginPage',
       meta:{
         title:'登录'

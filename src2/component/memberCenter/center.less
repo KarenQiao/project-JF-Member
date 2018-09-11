@@ -39,10 +39,7 @@
         opacity: 0.7;
       }
 
-      &:last-child{
 
-        border-bottom: none;
-      }
 
       &:before{
         content: '';
@@ -53,6 +50,15 @@
         width: calc(100vw - 30px);
         border-bottom: solid 1px #dddddd;
         transform: scaleY(0.6);
+      }
+
+      &:last-child{
+
+        &:before{
+
+          border-bottom: none;
+        }
+
       }
 
       &:after{

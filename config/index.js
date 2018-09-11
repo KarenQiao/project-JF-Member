@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-      //  target: 'http://116.62.199.212:7988/',//设置你调用的接口域名和端口号
+       // target: 'http://116.62.199.212:7988/',//设置你调用的接口域名和端口号
         target:'http://jhyvip.tao-lue.com/',
         changeOrigin: true,
         pathRewrite: {
