@@ -73,12 +73,16 @@
 
   import memberFooter from '../../components/footer.vue'
 
+  import API from '../../assets/api'
+
   export default {
 
     name:'memberCenter',
 
     data(){
       return{
+
+        token:'',
 
         userData:''
       }
@@ -90,14 +94,51 @@
 
     mounted(){
 
-      this.userData=JSON.parse(localStorage.getItem('userData'))
+      this.token = localStorage.getItem('userToken');
+
+      this.userData=localStorage.getItem('userData')
 
 
     },
 
     methods:{
 
+      checkOut(){
+
+        let params={
+
+          sessionKey:this.token
+        };
+
+        API.deleteFn(API.login,params).then(function (res) {
+
+          console.log(res)
+
+          if(res.data.code=='00000'){
+
+            localStorage.clear();
+
+            this.$router.push('/login')
+
+          }else {
+
+            jfShowTips.toastShow({'text':res.data.message});
+
+            return false
+
+          }
+
+        }.bind(this))
+
+          .catch(function (error) {
+
+          }.bind(this))
+
+      },
+
       loginOut(){
+
+        let _this=this;
 
         jfShowTips.dialogShow({
 
@@ -107,15 +148,13 @@
 
             jfShowTips.dialogRemove();
 
+            _this.checkOut();
+
+
           }
 
         })
-      },
-
-      checkOut(){
-
       }
-
 
     }
 
