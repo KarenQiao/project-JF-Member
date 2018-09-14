@@ -35,7 +35,7 @@
 
               <p><img :src="list.shopUrl"></p>
               <div>
-                <span class="title">{{list.shopTitle}}</span>
+                <span class="title">{{list.shopName}}</span>
                 <span>{{list.shopSpec}}</span>
 
                 <p class="member_between_center"><span class="golden_text">￥{{list.shopPrice}}</span><span>X{{list.shopNum}}</span></p>
