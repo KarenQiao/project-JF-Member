@@ -4,7 +4,7 @@
 
     <div class="jf_autoplay_images">
 
-      <wc-swiper v-if="bannerList.length>0" :autoplay=true>
+      <wc-swiper v-if="bannerList.length>0" :autoplay=true :interval="4000">
         <wc-slide v-for="(item,key) in bannerList" :key="key">
 
           <a :href="item.linkActivity">
