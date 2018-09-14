@@ -181,7 +181,7 @@
               var _this=this;
 
               setTimeout(function () {
-                _this.$router.push('/')
+                _this.$router.push('/login')
               },300)
 
             }else {

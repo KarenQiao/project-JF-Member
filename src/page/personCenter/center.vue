@@ -96,7 +96,7 @@
 
       this.token = localStorage.getItem('userToken');
 
-      this.userData=localStorage.getItem('userData')
+      this.userData=JSON.parse(localStorage.getItem('userData'))
 
 
     },
@@ -114,7 +114,7 @@
 
           console.log(res)
 
-          if(res.data.code=='00000'){
+          if(res.data.statusCode=='10000'){
 
             localStorage.clear();
 
