@@ -51,7 +51,7 @@
 
       getCoupons(){
 
-        API.getFn(API.modifyLogin,{userId:this.userData.userId})
+        API.getFn(API.modifyLogin)
 
           .then(function (res) {
 

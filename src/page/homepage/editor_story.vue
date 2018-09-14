@@ -10,7 +10,6 @@
 
           <p>
             <span class="content">{{item.theTitle}}</span>
-            <span class="ent">{{item.label}}</span>
           </p>
         </a>
 
