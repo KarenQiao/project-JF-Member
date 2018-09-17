@@ -55,8 +55,8 @@ export default new Router({
     },
 
     {
-      path: '/setPasd',
-      name: 'setPasd',
+      path: '/setpasd',
+      name: 'setpasd',
       meta:{
         title:'设置密码'
       },

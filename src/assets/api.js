@@ -23,13 +23,15 @@ let axiosHttp={
 
   login:process.env.API_ROOT+'v3/hysec/authorizations',//登录
 
-  modifyLogin:process.env.API_ROOT+'v3/hysec/modifyLoginStatus',//登录
+  modifyLogin:process.env.API_ROOT+'v3/hysec/modifyLoginStatus',//修改登录状态
 
   forgetPasd:process.env.API_ROOT+'v3/hysec/forgetPassword',//忘记密码
 
   forgetMsg:process.env.API_ROOT+'v3/hysec/modifyPasswdCode',//忘记密码验证码,修改密码
 
   modifyPasd:process.env.API_ROOT+'v3/hysec/updatePassword',//修改密码
+
+  setPasd:process.env.API_ROOT+'v3/hysec/outsideRest/register',//嘉福跳转设置密码
 
   couponsBag:process.env.API_ROOT+'v3/hyvip/userTicketRest/listTicketByUserId',//券包
 

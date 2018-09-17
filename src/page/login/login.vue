@@ -106,7 +106,7 @@
 
         };
 
-        API.postFn(API.login,params).then(function (res) {
+        API.getFn(API.login,params).then(function (res) {
 
           console.log(res.data);
 

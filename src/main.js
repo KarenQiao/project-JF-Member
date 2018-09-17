@@ -35,21 +35,15 @@ router.beforeEach((to, from, next) => {
 
   if(userInfo){
 
-
-/*    if (to.path&&to.name) {
-
-      next()
-
-    }else {
-
-      next({ path: '/homepage' })
-    }*/
-
     next();
 
   } else {
 
-    if(to.path=='/login'||to.path=='/registered'||to.path=='/forgetPasd'||to.path=='/setPasd'||to.path=='/'){
+    console.log(to.path)
+
+    console.log(to.path=='/login'||to.path=='/registered'||to.path=='/forgetPasd'||to.path=='/setpasd'||to.path=='/')
+
+    if(to.path=='/login'||to.path=='/registered'||to.path=='/forgetPasd'||to.path=='/setpasd'||to.path=='/'){
 
       next();
 

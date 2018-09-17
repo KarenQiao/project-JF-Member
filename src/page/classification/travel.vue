@@ -290,7 +290,7 @@
         <P class="theme_title_date"><span>2018年10月1日出发</span></P>
       </div>
 
-      <p class="area_name"><span>五星级航空</span><span>蓝梦岛</span><span>恶魔的眼泪</span><span>独木舟</span><span>香蕉船</span><span>浮潜</span><span>贝尼达岛双岛出海</span><span>网红秋千</span><span>海景下午茶</span><span>梦幻沙滩</span><sp>巴厘岛1天自由活动</sp></p>
+      <p class="area_name"><span>五星级航空</span><span>蓝梦岛</span><span>恶魔的眼泪</span><span>独木舟</span><span>香蕉船</span><span>浮潜</span><span>贝尼达岛双岛出海</span><span>网红秋千</span><span>海景下午茶</span><span>梦幻沙滩</span><span>巴厘岛1天自由活动</span></p>
 
       <div class="img_font_plate">
         <div class="high_img_plate"><img src="../../../static/images/img_europe_17.png"></div>
@@ -387,7 +387,7 @@
 
             if(res.data.code=='00000'){
 
-              this.dataList=res.data.list
+              this.dataList=res.data.list;
 
               console.log(this.dataList[0].url)
 
