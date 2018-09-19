@@ -334,6 +334,26 @@ export default new Router({
       },
       component:resolve=>require(['@/page/classification/jia_member_online'],resolve)
 
+    },
+
+    {
+      path:'/datedError',
+      name:'系统超时',
+      meta:{
+        title:'系统超时'
+      },
+      component:resolve=>require(['@/page/error/dated'],resolve)
+
+    },
+
+    {
+      path:'/accountError',
+      name:'账户错误',
+      meta:{
+        title:'账户错误'
+      },
+      component:resolve=>require(['@/page/error/account_error'],resolve)
+
     }
 
 
