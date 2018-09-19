@@ -15,7 +15,7 @@
         <div>
           <p class="pro_name">{{item.commodityName}}</p>
           <p class="pro_tips">{{item.label}}</p>
-          <p class="price"><span>{{item.price}}</span></p>
+          <p class="price"><span>¥{{item.price}}</span></p>
         </div>
 
         <div class="pro_pic">
@@ -30,7 +30,7 @@
         <a v-for="item in newPro.slice(1,4)" :href="item.url">
           <p><img v-lazy="item.theFigureUrl"></p>
           <p class="pro_title">{{item.commodityName}}</p>
-          <p class="golden_text">{{item.price}}</p>
+          <p class="golden_text">¥{{item.price}}</p>
         </a>
 
        <!-- <a >
