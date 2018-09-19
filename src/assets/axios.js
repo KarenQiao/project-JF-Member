@@ -73,7 +73,7 @@ axios.interceptors.response.use(function (res) {
 
       router.push('/login');
 
-     // window.location.reload();
+      window.location.reload();
 
     },1500)
 

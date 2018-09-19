@@ -12,8 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://jhyvip.tao-lue.com/',//设置你调用的接口域名和端口号
-      //  target:'http://viptest.tao-lue.com/',
+       // target: 'http://jhyvip.tao-lue.com/',//设置你调用的接口域名和端口号
+        target:'http://viptest.tao-lue.com/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/'
