@@ -98,7 +98,10 @@
 
       this.userData=JSON.parse(localStorage.getItem('userData'))
 
+    },
 
+    beforeDestroy(){
+      jfShowTips.dialogRemove();
     },
 
     methods:{
