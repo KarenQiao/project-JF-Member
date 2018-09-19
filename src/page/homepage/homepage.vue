@@ -142,26 +142,6 @@
       'activeBox':activeBox
     },
 
-
-/*    beforeRouteEnter (to, from, next) {
-
-      let userData = localStorage.getItem('userData');
-
-      let token = localStorage.getItem('userToken');
-
-      console.log(!userData||!token)
-
-      if (!userData||!token) {
-
-        console.log('sdfds')
-
-          next({path: '/login'})
-        }else {
-
-        next();
-      }
-      },*/
-
   mounted(){
 
     console.log('首页')
