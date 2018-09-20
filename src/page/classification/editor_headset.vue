@@ -46,6 +46,8 @@
 
         page:1,
 
+        dataList:[]
+
       }
     },
 
@@ -53,6 +55,7 @@
 
       this.id=this.$route.params.id;
 
+      this.getUrl();
 
     },
 
@@ -73,6 +76,8 @@
             console.log(res);
 
             if(res.data.code=='00000'){
+
+              this.dataList=res.data.list
 
             }
 
