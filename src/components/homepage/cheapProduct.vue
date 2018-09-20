@@ -10,7 +10,7 @@
       <a v-for="item in cheapPro"  :href="item.url">
         <p><img v-lazy=item.theFigureUrl></p>
         <p class="pro_info">{{item.commodityName}}</p>
-        <p class="member_between_center"><span class="pro_price">¥{{item.price}}</span><span class="customary_price">¥{{item.origPrice}}</span></p>
+        <p><span class="pro_price">¥{{item.price}}</span><span class="customary_price">¥{{item.origPrice}}</span></p>
       </a>
 
      <!-- <a>
