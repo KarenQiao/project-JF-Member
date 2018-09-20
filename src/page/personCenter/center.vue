@@ -101,11 +101,7 @@
     },
 
     beforeDestroy(){
-
-      if(document.getElementById('tip_dialog')){
-        jfShowTips.dialogRemove();
-      }
-
+      jfShowTips.dialogRemove();
     },
 
     methods:{

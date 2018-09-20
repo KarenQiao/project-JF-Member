@@ -65,7 +65,7 @@
 
             <p>已节省：<span>￥900</span></p>
 
-            <a class="buy_btn_left"  :href="dataList.length>0?dataList[1].url:''">立即购买</a>
+            <a class="buy_btn_left"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_04.png"></div>
@@ -108,7 +108,7 @@
 
           <p>已节省：<span>￥700</span></p>
 
-          <a class="buy_btn_right"  :href="dataList.length>0?dataList[2].url:''">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -136,7 +136,7 @@
 
             <p>已节省：<span>￥900</span></p>
 
-            <a class="buy_btn_left"  :href="dataList.length>0?dataList[3].url:''">立即购买</a>
+            <a class="buy_btn_left"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_08.png"></div>
@@ -168,7 +168,7 @@
 
           <p>已节省：<span>￥1000</span></p>
 
-          <a class="buy_btn_right"  :href="dataList.length>0?dataList[4].url:''">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@
 
           <p>已节省：<span>￥384</span></p>
 
-          <a class="buy_btn_right"  :href="dataList.length>0?dataList[5].url:''">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -234,7 +234,7 @@
 
             <p>已节省：<span>￥400</span></p>
 
-            <a class="buy_btn_left"  :href="dataList.length>0?dataList[6].url:''">立即购买</a>
+            <a class="buy_btn_left"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_14.png"></div>
@@ -266,7 +266,7 @@
 
           <p>已节省：<span>￥300</span></p>
 
-          <a class="buy_btn_right"  :href="dataList.length>0?dataList[7].url:''">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
     </div>
@@ -304,7 +304,7 @@
 
           <p>已节省：<span>￥372</span></p>
 
-          <a class="buy_btn_right"  :href="dataList.length>0?dataList[8].url:''">立即购买</a>
+          <a class="buy_btn_right"  :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
       </div>
 
@@ -332,7 +332,7 @@
 
             <p>已节省：<span>￥400</span></p>
 
-            <a class="buy_btn_left" :href="dataList.length>0?dataList[9].url:''">立即购买</a>
+            <a class="buy_btn_left" :href="dataList.length>0?dataList[10].url:''">立即购买</a>
           </div>
 
           <div class="high_img_plate"><img src="../../../static/images/img_europe_20.png"></div>
