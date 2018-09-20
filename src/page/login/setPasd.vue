@@ -3,6 +3,8 @@
   <div class="registered_page">
     <div class="input_box ">
 
+      <div style="font-size: 20px;;margin-top: -10px">欢迎使用嘉会员</div>
+
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_phone.png"></span>
         <input type="tel" readonly v-model="mobileNo"/>
@@ -10,7 +12,7 @@
 
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_locked.png"></span>
-        <input type="password" placeholder="请输入新密码" v-model="passWord" maxlength="20"/>
+        <input type="password" placeholder="请设置嘉会员登陆密码" v-model="passWord" maxlength="20"/>
       </label>
 
       <label class="member_left_center">
@@ -21,9 +23,13 @@
       <p class="pasd_tips">密码长度6~16位，数字、字母、字符至少包含两种</p>
 
 
+
+
       <div>
         <button class="go_register" @click="checkPasd">确认</button>
       </div>
+
+      <p class="pasd_tips login_tips">嘉会员用户名为嘉福账户绑定的手机号</p>
     </div>
   </div>
 
@@ -46,6 +52,8 @@
 
         loginPasd:'',
 
+        geid:'',
+
         passWord:'',
 
         rePassword:'',
@@ -56,18 +64,29 @@
 
     created(){
 
-      this.mobileNo=window.location.href.split('?')[1].split('=')[1].slice(0,11);
+
+      this.mobileNo=window.location.href.split('?')[1].split('&')[0].slice(7);
+
+      console.log('mobile='+this.mobileNo)
+
+      this.geid=window.location.href.split('?')[1].split('&')[2].slice(5);
+
+      console.log('geid='+this.geid)
 
       if(window.location.href.includes('password')){
 
-        this.loginPasd=window.location.href.split('?')[1].split('=')[2];
+        this.loginPasd=window.location.href.split('?')[1].split('&')[1].slice(9);
+
+        console.log('Pasd='+this.loginPasd)
 
         this.selfLogin();
 
-
       }else {
 
-        this.guid=window.location.href.split('?')[1].split('=')[2];
+        this.guid=window.location.href.split('?')[1].split('&')[1].slice(5);
+
+
+        console.log('guid='+this.guid)
       }
 
     },
@@ -121,7 +140,10 @@
 
             rePassword: this.rePassword,
 
-            guid: this.guid
+            guid: this.guid,
+
+            geid:this.geid
+
           };
 
           API.postFn(API.setPasd,params)
@@ -172,6 +194,9 @@
           username:this.mobileNo,
 
           password:this.loginPasd,
+
+          geid:this.geid
+
 
         };
         jfShowTips.loadingShow()
