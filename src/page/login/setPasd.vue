@@ -46,6 +46,8 @@
 
         loginPasd:'',
 
+        geid:'',
+
         passWord:'',
 
         rePassword:'',
@@ -56,18 +58,21 @@
 
     created(){
 
-      this.mobileNo=window.location.href.split('?')[1].split('=')[1].slice(0,11);
+
+      this.mobileNo=window.location.href.split('?')[1].split('&')[0].slice(7);
+
+      this.geid=window.location.href.split('?')[1].split('&')[2].slice(5);
 
       if(window.location.href.includes('password')){
 
-        this.loginPasd=window.location.href.split('?')[1].split('=')[2];
+        this.loginPasd=window.location.href.split('?')[1].split('&')[1].slice(9);
 
         this.selfLogin();
 
-
       }else {
 
-        this.guid=window.location.href.split('?')[1].split('=')[2];
+        this.guid=window.location.href.split('?')[1].split('&')[1].slice(5);
+
       }
 
     },
@@ -121,7 +126,10 @@
 
             rePassword: this.rePassword,
 
-            guid: this.guid
+            guid: this.guid,
+
+            geid:this.geid
+
           };
 
           API.postFn(API.setPasd,params)
@@ -172,6 +180,9 @@
           username:this.mobileNo,
 
           password:this.loginPasd,
+
+          geid:this.geid
+
 
         };
         jfShowTips.loadingShow()
