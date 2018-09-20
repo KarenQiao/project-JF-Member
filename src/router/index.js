@@ -58,7 +58,7 @@ export default new Router({
       path: '/setpasd',
       name: 'setpasd',
       meta:{
-        title:'设置密码'
+        title:'嘉会员'
       },
       component: resolve => require(['@/page/Login/setPasd'], resolve)
     },
