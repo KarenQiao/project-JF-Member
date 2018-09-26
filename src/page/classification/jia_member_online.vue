@@ -14,7 +14,7 @@
       <div class="youhui_card">
 
         <div class="card_left">
-          <p class="left_top_font"><span>300</span><span class="left_top_small">元优惠券</span></p>
+          <p class="left_top_font"><span>310</span><span class="left_top_small">元优惠券</span></p>
 
           <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
         </div>
@@ -95,31 +95,13 @@
 
           <p class="left_top_small">全品类</p>
 
-          <p class="left_bottom_font">满399元可用</p>
-        </div>
-
-
-      </div>
-
-      <div class="youhui_card">
-
-        <div class="card_left">
-          <p class="left_top_font"><span>50</span><span class="left_top_small">元优惠券</span></p>
-
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
-        </div>
-
-        <div class="card_right">
-
-          <p class="left_top_small">全品类</p>
-
           <p class="left_bottom_font">满459元可用</p>
         </div>
 
 
       </div>
 
-      <div class="youhui_card">
+      <div class="youhui_card card_number">
 
         <div class="card_left">
           <p class="left_top_font"><span>50</span><span class="left_top_small">元优惠券</span></p>
@@ -204,7 +186,7 @@
 
           <p class="left_top_small">全品类</p>
 
-          <p class="left_bottom_font">满99元可用</p>
+          <p class="left_bottom_font">满159元可用</p>
         </div>
 
 
@@ -222,27 +204,8 @@
 
           <p class="left_top_small">全品类</p>
 
-          <p class="left_bottom_font">满159元可用</p>
+          <p class="left_bottom_font">满99元可用</p>
         </div>
-
-
-      </div>
-
-      <div class="youhui_card">
-
-        <div class="card_left">
-          <p class="left_top_font"><span>10</span><span class="left_top_small">元优惠券</span></p>
-
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
-        </div>
-
-        <div class="card_right">
-
-          <p class="left_top_small">全品类</p>
-
-          <p class="left_bottom_font">无门槛</p>
-        </div>
-
 
       </div>
 
