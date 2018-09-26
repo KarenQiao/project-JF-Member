@@ -33,9 +33,9 @@
 
           <p>市场价：<span>￥8999</span></p>
 
-          <p>会员价：<span class="red_price">￥8319</span></p>
+          <p>会员价：<span class="red_price">￥8489</span></p>
 
-          <p>已节省：<span>￥680</span></p>
+          <p>已节省：<span>￥510</span></p>
 
           <a class="buy_btn_right" :href="dataList.length>0?dataList[0].url:''">立即购买</a>
         </div>
@@ -61,9 +61,9 @@
 
             <p>市场价：<span>￥15499</span></p>
 
-            <p>会员价：<span class="red_price">￥14599</span></p>
+            <p>会员价：<span class="red_price">￥14689</span></p>
 
-            <p>已节省：<span>￥900</span></p>
+            <p>已节省：<span>￥810</span></p>
 
             <a class="buy_btn_left"  :href="dataList.length>0?dataList[1].url:''">立即购买</a>
           </div>
@@ -104,9 +104,9 @@
 
           <p>市场价：<span>￥19300</span></p>
 
-          <p>会员价：<span class="red_price">￥18600</span></p>
+          <p>会员价：<span class="red_price">￥18589</span></p>
 
-          <p>已节省：<span>￥700</span></p>
+          <p>已节省：<span>￥711</span></p>
 
           <a class="buy_btn_right"  :href="dataList.length>0?dataList[2].url:''">立即购买</a>
         </div>
@@ -132,9 +132,9 @@
 
             <p>市场价：<span>￥15000</span></p>
 
-            <p>会员价：<span class="red_price">￥14100</span></p>
+            <p>会员价：<span class="red_price">￥14378</span></p>
 
-            <p>已节省：<span>￥900</span></p>
+            <p>已节省：<span>￥622</span></p>
 
             <a class="buy_btn_left"  :href="dataList.length>0?dataList[3].url:''">立即购买</a>
           </div>
@@ -164,9 +164,9 @@
 
           <p>市场价：<span>￥12499</span></p>
 
-          <p>会员价：<span class="red_price">￥11499</span></p>
+          <p>会员价：<span class="red_price">￥11689</span></p>
 
-          <p>已节省：<span>￥1000</span></p>
+          <p>已节省：<span>￥810</span></p>
 
           <a class="buy_btn_right"  :href="dataList.length>0?dataList[4].url:''">立即购买</a>
         </div>
@@ -202,9 +202,9 @@
 
           <p>市场价：<span>￥6000</span></p>
 
-          <p>会员价：<span class="red_price">￥5616</span></p>
+          <p>会员价：<span class="red_price">￥5678</span></p>
 
-          <p>已节省：<span>￥384</span></p>
+          <p>已节省：<span>￥322</span></p>
 
           <a class="buy_btn_right"  :href="dataList.length>0?dataList[5].url:''">立即购买</a>
         </div>
@@ -230,9 +230,9 @@
 
             <p>市场价：<span>￥10000</span></p>
 
-            <p>会员价：<span class="red_price">￥9600</span></p>
+            <p>会员价：<span class="red_price">￥9190</span></p>
 
-            <p>已节省：<span>￥400</span></p>
+            <p>已节省：<span>￥810</span></p>
 
             <a class="buy_btn_left"  :href="dataList.length>0?dataList[6].url:''">立即购买</a>
           </div>
@@ -260,11 +260,11 @@
         <div class="img_font_right">
           <div class="weight_img_plate"><img src="../../../static/images/img_europe_16.png"></div>
 
-          <p>市场价：<span>￥6100</span></p>
+          <p>市场价：<span>￥6199</span></p>
 
-          <p>会员价：<span class="red_price">￥5800</span></p>
+          <p>会员价：<span class="red_price">￥5889</span></p>
 
-          <p>已节省：<span>￥300</span></p>
+          <p>已节省：<span>￥310</span></p>
 
           <a class="buy_btn_right"  :href="dataList.length>0?dataList[7].url:''">立即购买</a>
         </div>
@@ -300,9 +300,9 @@
 
           <p>市场价：<span>￥6290</span></p>
 
-          <p>会员价：<span class="red_price">￥5918</span></p>
+          <p>会员价：<span class="red_price">￥5980</span></p>
 
-          <p>已节省：<span>￥372</span></p>
+          <p>已节省：<span>￥310</span></p>
 
           <a class="buy_btn_right"  :href="dataList.length>0?dataList[8].url:''">立即购买</a>
         </div>
@@ -328,9 +328,9 @@
 
             <p>市场价：<span>￥8590</span></p>
 
-            <p>会员价：<span class="red_price">￥8190</span></p>
+            <p>会员价：<span class="red_price">￥8189</span></p>
 
-            <p>已节省：<span>￥400</span></p>
+            <p>已节省：<span>￥401</span></p>
 
             <a class="buy_btn_left" :href="dataList.length>0?dataList[9].url:''">立即购买</a>
           </div>

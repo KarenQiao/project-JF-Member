@@ -23,6 +23,8 @@
         <option value="女">女</option>
       </select>
 
+      <input type="text" class="name_input" placeholder="请输入申请人姓名" value="" v-model="parentName"/>
+
       <label class="checkbox_font">
         <input class="vip_element_radio" type="checkbox" name="radio" v-model="checked">
 
@@ -80,6 +82,8 @@
 
         kidAge:'',
 
+        parentName:'',
+
         checked:false
       }
     },
@@ -110,6 +114,12 @@
 
           return false
 
+        }else if (this.parentName==''){
+
+          jfShowTips.toastShow({'text':'请输入申请人姓名'});
+
+          return false
+
         } else if(!this.checked){
 
           jfShowTips.toastShow({'text':'请同意相关协议'});
@@ -125,7 +135,10 @@
 
           kidGender:this.kidGender,
 
-          kidAge:this.kidAge
+          kidAge:this.kidAge,
+
+          parentName:this.parentName
+
         }
 
         API.postFn(API.vipKid,params)
