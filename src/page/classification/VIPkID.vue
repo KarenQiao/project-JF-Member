@@ -86,17 +86,11 @@
 
     mounted() {
 
-
       let userData= JSON.parse(localStorage.getItem('userData'));
 
       this.userID=userData.userId;
 
       this.mobile=userData.mobileNo;
-
-      this.userId=8628699251605504;
-
-      this.mobile=15223793984
-
     },
 
     methods:{
