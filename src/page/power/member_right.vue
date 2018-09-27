@@ -45,6 +45,7 @@
         </div>
         <p>生日特权</p>
       </a>
+<!--
 
       <a @click="customerFn">
         <div class="power_img" :class="userData.userLevel==1?'lock_power':''">
@@ -52,6 +53,15 @@
         </div>
         <p>专属客服</p>
       </a>
+-->
+
+      <a @click="customerFn">
+        <div class="power_img">
+          <img src="../../../static/images/icon_customer_service.png">
+        </div>
+        <p>专属客服</p>
+      </a>
+
 
       <a class="coming_online_gray">
         <div class="power_img">
@@ -152,7 +162,9 @@
 
         }*/
 
-        if (browser.supplier.weixin) {
+        MemberCustomer.click();
+
+       /* if (browser.supplier.weixin) {
           MemberCustomer.click();
         } else if (browser.supplier.ios) {
           window.webkit.messageHandlers.iOSMeiQia.postMessage({
@@ -167,18 +179,8 @@
         } else if (browser.supplier.android) {
           window.AndroidInterface.androidMeiQia(
             {'name':'嘉会员'}, {'email':''}, {'tel':_this.userData.mobileNo}, {'公司名称':""}, {'公司编号':""}, {'group':'b040d96757bf55ea302f9fbfb0ecd062'}
-
-            /*"{\"name\":\"${sessionScope['session.user.context'].name}\""
-            + ",\"email\":\"${sessionScope['session.user.context'].email}\""
-            + ",\"tel\":\"${sessionScope['session.user.context'].mobile}\""
-            + ",\"entname\":\"${sessionScope['session.user.context'].entName}\""
-            + ",\"entid\":\"${sessionScope['session.user.context'].eid}\""
-            + ",\"group\":\"b040d96757bf55ea302f9fbfb0ecd062\"}");*/
-
           )
-        }
-
-       // MemberCustomer.click();
+        }*/
 
       }
     }
