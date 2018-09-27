@@ -5,7 +5,7 @@
 
     <div class="vip_English_select">
       <select class="vip_select_plate" v-model="kidAge">
-        <option value="">请选择年龄</option>
+        <option value="">请选择小孩年龄</option>
         <option value="4">4岁</option>
         <option value="5">5岁</option>
         <option value="6">6岁</option>
@@ -18,10 +18,12 @@
       </select>
 
       <select class="vip_select_plate" v-model="kidGender">
-        <option value="">请选择性别</option>
+        <option value="">请选择小孩性别</option>
         <option value="男">男</option>
         <option value="女">女</option>
       </select>
+
+      <input type="text" class="name_input" placeholder="请输入申请人姓名" value="" v-model="parentName"/>
 
       <label class="checkbox_font">
         <input class="vip_element_radio" type="checkbox" name="radio" v-model="checked">
@@ -80,6 +82,8 @@
 
         kidAge:'',
 
+        parentName:'',
+
         checked:false
       }
     },
@@ -110,6 +114,12 @@
 
           return false
 
+        }else if (this.parentName==''){
+
+          jfShowTips.toastShow({'text':'请输入申请人姓名'});
+
+          return false
+
         } else if(!this.checked){
 
           jfShowTips.toastShow({'text':'请同意相关协议'});
@@ -125,7 +135,10 @@
 
           kidGender:this.kidGender,
 
-          kidAge:this.kidAge
+          kidAge:this.kidAge,
+
+          parentName:this.parentName
+
         }
 
         API.postFn(API.vipKid,params)
