@@ -45,6 +45,7 @@
         </div>
         <p>生日特权</p>
       </a>
+<!--
 
       <a @click="customerFn">
         <div class="power_img" :class="userData.userLevel==1?'lock_power':''">
@@ -52,6 +53,15 @@
         </div>
         <p>专属客服</p>
       </a>
+-->
+
+      <a @click="customerFn">
+        <div class="power_img">
+          <img src="../../../static/images/icon_customer_service.png">
+        </div>
+        <p>专属客服</p>
+      </a>
+
 
       <a class="coming_online_gray">
         <div class="power_img">
@@ -117,14 +127,25 @@
 
       this.userData=JSON.parse(localStorage.getItem('userData'))
 
-      MemberCustomer.init({
+/*      MemberCustomer.init({
 
         'tel':this.userData.mobileNo,
 
         '用户ID':this.userData.userId,
 
         '等级':this.userData.userLevel
-      })
+      })*/
+
+
+      MemberCustomer.init({//用户信息
+          name: "嘉会员",// 名字
+          email: "",// 邮箱
+          tel: this.userData.mobileNo,// 电话
+          '公司名称':"",
+          '公司编号':"",
+          '员工编号':""
+        },'b040d96757bf55ea302f9fbfb0ecd062' //客服组1
+      );
 
     },
 
@@ -133,13 +154,33 @@
     methods:{
       customerFn(){
 
-        if(this.userData.userLevel==1){
+        let _this=this;
+
+      /*  if(this.userData.userLevel==1){
 
           return false
 
-        }
+        }*/
 
         MemberCustomer.click();
+
+       /* if (browser.supplier.weixin) {
+          MemberCustomer.click();
+        } else if (browser.supplier.ios) {
+          window.webkit.messageHandlers.iOSMeiQia.postMessage({
+            name: "嘉会员",// 名字
+            email: "",// 邮箱
+            tel: _this.userData.mobileNo,// 电话
+            '公司名称':"",
+            '公司编号':"",
+            '员工编号':"",
+            group:'b040d96757bf55ea302f9fbfb0ecd062'
+          });
+        } else if (browser.supplier.android) {
+          window.AndroidInterface.androidMeiQia(
+            {'name':'嘉会员'}, {'email':''}, {'tel':_this.userData.mobileNo}, {'公司名称':""}, {'公司编号':""}, {'group':'b040d96757bf55ea302f9fbfb0ecd062'}
+          )
+        }*/
 
       }
     }
