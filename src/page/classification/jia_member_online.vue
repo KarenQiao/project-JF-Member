@@ -1,3 +1,4 @@
+
 <template>
 
   <div>
@@ -10,13 +11,13 @@
       <div class="card_top_font">
         <p>消费满减券</p>
       </div>
-
+  
       <div class="youhui_card">
 
         <div class="card_left">
           <p class="left_top_font"><span>310</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -34,7 +35,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>150</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -52,7 +53,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>110</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -70,7 +71,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>80</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -88,7 +89,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>60</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -106,7 +107,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>50</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -125,7 +126,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>35</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -143,7 +144,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>25</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -161,7 +162,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>20</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -179,7 +180,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>15</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -197,7 +198,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>15</span><span class="left_top_small">元优惠券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
@@ -218,7 +219,7 @@
         <div class="card_left">
           <p class="left_top_font"><span>3</span><span class="left_top_small">期免息券</span></p>
 
-          <p class="left_bottom_font"><span>有效期：</span><span>从领券日起一个月</span></p>
+          <p class="left_bottom_font"><span>有效期：</span><span>截至2018年10月23日</span></p>
         </div>
 
         <div class="card_right">
