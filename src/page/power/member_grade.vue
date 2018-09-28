@@ -12,7 +12,7 @@
 
           <p class="more_details_font">嘉会员会员等级暂分为三级</p>
 
-          <p class="more_details_font">等级有效期为365天（1级会员永久有效）定期结算</p>
+          <p class="more_details_font">等级有效期为365天（一级会员永久有效）定期结算</p>
 
           <p class="more_details_font">嘉会员等级以积分的积累而确定</p>
 
