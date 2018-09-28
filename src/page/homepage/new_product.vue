@@ -5,7 +5,7 @@
 
     <div class="product_list">
 
-      <scroller :on-infinite="infinite" :on-refresh="refresh" ref="my_scroller"  class="my-scroller"  refresh-layer-color="#bb9966" no-data-text="没有更多商品啦~" v-if="dataList.length>0">
+      <scroller :on-infinite="infinite" :on-refresh="refresh" ref="my_scroller"  class="my-scroller"  refresh-layer-color="#bb9966" no-data-text="我们是有底线的~" v-if="dataList.length>0">
 
       <a v-for="item in dataList" :href="item.url">
         <p><img v-lazy="item.theFigureUrl"></p>

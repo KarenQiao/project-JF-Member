@@ -1,7 +1,7 @@
 <template>
 
   <div class="registered_page">
-    <div class="input_box ">
+    <div class="input_box input_boxa">
 
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_phone.png"></span>

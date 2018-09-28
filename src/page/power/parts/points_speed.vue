@@ -27,7 +27,7 @@
         <div class="parts_details_font">
           <p class="parts_details_title">权益说明</p>
 
-          <p class="more_details_font">每笔订单消费，银卡会员可额外获得5%的积分，金卡会员可额外获得10%的积分</p>
+          <p class="more_details_font">每笔订单消费，月亮级别可额外获得5%的积分，太阳级别可额外获得10%的积分</p>
         </div>
       </div>
     </div>
