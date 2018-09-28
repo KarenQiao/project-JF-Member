@@ -33,7 +33,7 @@
 
           <p>市场价：<span>￥8999</span></p>
 
-          <p>会员价：<span class="red_price">￥8489</span></p>
+          <p>券后价：<span class="red_price">￥8489</span></p>
 
           <p>已节省：<span>￥510</span></p>
 
@@ -61,7 +61,7 @@
 
             <p>市场价：<span>￥15499</span></p>
 
-            <p>会员价：<span class="red_price">￥14689</span></p>
+            <p>券后价：<span class="red_price">￥14689</span></p>
 
             <p>已节省：<span>￥810</span></p>
 
@@ -104,7 +104,7 @@
 
           <p>市场价：<span>￥19300</span></p>
 
-          <p>会员价：<span class="red_price">￥18589</span></p>
+          <p>券后价：<span class="red_price">￥18589</span></p>
 
           <p>已节省：<span>￥711</span></p>
 
@@ -132,7 +132,7 @@
 
             <p>市场价：<span>￥15000</span></p>
 
-            <p>会员价：<span class="red_price">￥14378</span></p>
+            <p>券后价：<span class="red_price">￥14378</span></p>
 
             <p>已节省：<span>￥622</span></p>
 
@@ -164,7 +164,7 @@
 
           <p>市场价：<span>￥12499</span></p>
 
-          <p>会员价：<span class="red_price">￥11689</span></p>
+          <p>券后价：<span class="red_price">￥11689</span></p>
 
           <p>已节省：<span>￥810</span></p>
 
@@ -202,7 +202,7 @@
 
           <p>市场价：<span>￥6000</span></p>
 
-          <p>会员价：<span class="red_price">￥5678</span></p>
+          <p>券后价：<span class="red_price">￥5678</span></p>
 
           <p>已节省：<span>￥322</span></p>
 
@@ -230,7 +230,7 @@
 
             <p>市场价：<span>￥10000</span></p>
 
-            <p>会员价：<span class="red_price">￥9190</span></p>
+            <p>券后价：<span class="red_price">￥9190</span></p>
 
             <p>已节省：<span>￥810</span></p>
 
@@ -262,7 +262,7 @@
 
           <p>市场价：<span>￥6199</span></p>
 
-          <p>会员价：<span class="red_price">￥5889</span></p>
+          <p>券后价：<span class="red_price">￥5889</span></p>
 
           <p>已节省：<span>￥310</span></p>
 
@@ -300,7 +300,7 @@
 
           <p>市场价：<span>￥6290</span></p>
 
-          <p>会员价：<span class="red_price">￥5980</span></p>
+          <p>券后价：<span class="red_price">￥5980</span></p>
 
           <p>已节省：<span>￥310</span></p>
 
@@ -328,7 +328,7 @@
 
             <p>市场价：<span>￥8590</span></p>
 
-            <p>会员价：<span class="red_price">￥8189</span></p>
+            <p>券后价：<span class="red_price">￥8189</span></p>
 
             <p>已节省：<span>￥401</span></p>
 
