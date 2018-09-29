@@ -20,7 +20,7 @@
 
       <p>热线电话：400-821-6990</p>
 
-      <p class="word">服务时间：工作日8：00-19：00</p>
+      <p class="word">服务时间：工作日8:00-19:00</p>
     </div>
 
     <div class="help_plate">
