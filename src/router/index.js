@@ -337,6 +337,26 @@ export default new Router({
     },
 
     {
+      path:'/electronicCard',
+      name:'编辑电子贺卡',
+      meta:{
+        title:'编辑电子贺卡'
+      },
+      component:resolve=>require(['@/page/personCenter/electronic_card'],resolve)
+
+    },
+
+    {
+      path:'/loadingPage',
+      name:'启动页',
+      meta:{
+        title:'启动页'
+      },
+      component:resolve=>require(['@/page/homepage/loading_page'],resolve)
+
+    },
+
+    {
       path:'/datedError',
       name:'系统超时',
       meta:{
