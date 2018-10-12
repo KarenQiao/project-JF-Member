@@ -345,7 +345,16 @@ export default new Router({
       component:resolve=>require(['@/page/classification/double_ninth_festival'],resolve)
 
     },
-
+    {
+      path:'/recommend',
+      name:'主编推荐-重阳节',
+      meta:{
+        title:'主编推荐-重阳节'
+      },
+      component:resolve=>require(['@/page/classification/recommend'],resolve)
+    
+    },
+    
     {
       path:'/electronicCard',
       name:'编辑电子贺卡',
