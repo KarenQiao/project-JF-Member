@@ -346,15 +346,15 @@ export default new Router({
 
     },
     {
-      path:'/recommend',
+      path:'/nineNine',
       name:'主编推荐-重阳节',
       meta:{
         title:'主编推荐-重阳节'
       },
-      component:resolve=>require(['@/page/classification/recommend'],resolve)
-    
+      component:resolve=>require(['@/page/classification/nine_nine'],resolve)
+
     },
-    
+
     {
       path:'/electronicCard',
       name:'编辑电子贺卡',
