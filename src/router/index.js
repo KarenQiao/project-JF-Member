@@ -350,9 +350,9 @@ export default new Router({
       path:'/loadingPage',
       name:'启动页',
       meta:{
-        title:'启动页'
+        title:'嘉会员'
       },
-      component:resolve=>require(['@/page/homepage/loading_page'],resolve)
+      component:resolve=>require(['@/page/loading_page'],resolve)
 
     },
 
