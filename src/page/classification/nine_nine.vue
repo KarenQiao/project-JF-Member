@@ -1,13 +1,13 @@
 <template>
 
   <div>
-    <div class="img_festival_top">
-      <img src="../../../static/images/festival/img_festival_top.png"/>
-    </div>
+    <div class="recom_top"><img src="../../../static/images/festival/nine01.png"/></div>
+    <div class="recom_cen"><img src="../../../static/images/festival/nine02.png" alt=""></div>
+    <!--<div class="recom_bot"><img src="../../../static/images/festival/nine03.png" alt=""></div>-->
 
-    <a class="img_festival_first" @click="$router.push('/electronicCard')">
-      <img src="../../../static/images/festival/img_festival_01.png"/>
-    </a>
+    <!--<a class="img_festival_first" @click="$router.push('/electronicCard')">-->
+      <!--<img src="../../../static/images/festival/img_festival_01.png"/>-->
+    <!--</a>-->
 
     <a class="img_festival_second" :href="dataList.length>0?dataList[0].url:''">
       <img src="../../../static/images/festival/img_festival_02.png"/>
@@ -61,9 +61,13 @@
       <img src="../../../static/images/festival/img_festival_11.png"/>
     </a>
 
-    <a class="img_festival_twelve" :href="dataList.length>0?dataList[13].url:''">
-      <img src="../../../static/images/festival/img_festival_12.png"/>
-    </a>
+    <div class="nine_bottom_first" :href="dataList.length>0?dataList[13].url:''">
+      <img src="../../../static/images/festival/nine3.png"/>
+    </div>
+
+    <div class="nine_bottom_first">
+      <img src="../../../static/images/festival/nine04.png"/>
+    </div>
   </div>
 
 </template>
