@@ -55,8 +55,6 @@
 
     mounted(){
 
-      console.log('登录')
-
       let token = localStorage.getItem('userToken');
 
       let userData=JSON.parse(localStorage.getItem('userData'));

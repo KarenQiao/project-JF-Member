@@ -1,9 +1,7 @@
 <template>
 
   <div class="registered_page">
-    <div class="input_box ">
-
-      <div style="font-size: 20px;;margin-top: -10px">欢迎使用嘉会员</div>
+    <div class="input_box input_boxa">
 
       <label class="member_left_center">
         <span><img src="../../../static/images/icon_phone.png"></span>
@@ -64,35 +62,15 @@
 
     created(){
 
+      this.mobileNo=localStorage.getItem('mobileNo');
 
-      this.mobileNo=window.location.href.split('?')[1].split('&')[0].slice(7);
+      this.geid=localStorage.getItem('geid');
 
-      console.log('mobile='+this.mobileNo)
-
-      this.geid=window.location.href.split('?')[1].split('&')[2].slice(5);
-
-      console.log('geid='+this.geid)
-
-      if(window.location.href.includes('password')){
-
-        this.loginPasd=window.location.href.split('?')[1].split('&')[1].slice(9);
-
-        console.log('Pasd='+this.loginPasd)
-
-        this.selfLogin();
-
-      }else {
-
-        this.guid=window.location.href.split('?')[1].split('&')[1].slice(5);
-
-
-        console.log('guid='+this.guid)
-      }
+      this.guid=localStorage.getItem('guid')
 
     },
 
     mounted(){
-
 
     },
 
@@ -153,6 +131,12 @@
 
                 jfShowTips.toastShow({'text':'设置成功'});
 
+                localStorage.removeItem('geid');
+
+                localStorage.removeItem('guid');
+
+                localStorage.removeItem('mobileNo');
+
                 localStorage.setItem('userData',JSON.stringify(res.data.data));
 
                 localStorage.setItem('firstLogin',res.data.data.firstLogin);
@@ -187,54 +171,6 @@
         }
       },
 
-      selfLogin(){
-
-        let params={
-
-          username:this.mobileNo,
-
-          password:this.loginPasd,
-
-          geid:this.geid
-
-
-        };
-        jfShowTips.loadingShow()
-
-        API.getFn(API.login,params).then(function (res) {
-
-          console.log(res)
-
-          jfShowTips.loadingRemove();
-
-          if(res.data.code=='00000'){
-
-            localStorage.setItem('userData',JSON.stringify(res.data.data));
-
-            localStorage.setItem('firstLogin',res.data.data.firstLogin);
-
-            localStorage.setItem('userToken',res.data.data.sessionKey);
-
-            this.$router.push('/homepage')
-
-
-          }else {
-
-            jfShowTips.toastShow({'text':res.data.message});
-
-            return false
-
-          }
-
-        }.bind(this))
-          .catch(function (error) {
-
-            jfShowTips.loadingRemove();
-            console.log(error)
-
-          }.bind(this))
-
-      }
     }
   }
 </script>
