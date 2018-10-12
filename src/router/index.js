@@ -337,6 +337,16 @@ export default new Router({
     },
 
     {
+      path:'/doubleNinthFestival',
+      name:'嘉会员重阳节',
+      meta:{
+        title:'嘉会员重阳节'
+      },
+      component:resolve=>require(['@/page/classification/double_ninth_festival'],resolve)
+
+    },
+
+    {
       path:'/electronicCard',
       name:'编辑电子贺卡',
       meta:{
