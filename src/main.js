@@ -41,7 +41,7 @@ router.beforeEach((to, from, next) => {
 
     console.log(to.path)
 
-    if(to.path=='/login'||to.path=='/registered'||to.path=='/forgetPasd'||to.path=='/setpasd'||to.path=='/'||to.path=='/accountError'||to.path=='/datedError'){
+    if(to.path=='/login'||to.path=='/registered'||to.path=='/forgetPasd'||to.path=='/setpasd'||to.path=='/'||to.path=='/accountError'||to.path=='/datedError'||to.path=='/loadingPage'){
 
       next();
 

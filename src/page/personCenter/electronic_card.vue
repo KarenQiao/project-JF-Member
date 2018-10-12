@@ -38,7 +38,7 @@
       <div class="content_input">
         <span>请写下您的祝福语：</span>
 
-        <textarea placeholder="200字以内" v-model="content" id="content" maxlength="200"></textarea>
+        <textarea placeholder="50字以内" v-model="content" id="content" maxlength="50"></textarea>
       </div>
 
       <button class="long_btn" @click="createCard">点击生成贺卡</button>
