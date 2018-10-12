@@ -39,6 +39,8 @@ let axiosHttp={
 
   vipKid:process.env.API_ROOT+'v3/hyvip/goodsRest/saveVipKidOrder',//VIPKID
 
+  electronicCard:process.env.API_ROOT+'v3/hysec/userBlessingRest/makeBlessing',//编辑电子贺卡
+
 
 
   getFn:(url,params)=>{
