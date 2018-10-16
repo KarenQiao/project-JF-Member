@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <div class="vip_English_banner"><img src="../../../static/images/vip_English_img/vip_English_banner1.png"/></div>
+    <div class="vip_English_banner"><img src="../../../static/images/vip_English_img/vip_English_banner001.png"/></div>
 
     <div class="vip_English_select">
       <select class="vip_select_plate" v-model="kidAge">
