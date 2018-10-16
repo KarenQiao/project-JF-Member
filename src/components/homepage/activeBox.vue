@@ -1,25 +1,42 @@
 <template>
 
+  <!--<div class="active_box" >-->
+
+    <!--<div class="main_box">-->
+      <!--<div class="popup_logo_plate"><img src="../../../static/images/img_popup_logo.png"/></div>-->
+
+      <!--<p class="popup_welcome_font">嘉会员欢迎您</p>-->
+
+      <!--<p class="popup_welcome_details">价值￥<span>6000</span>优惠券</p>-->
+
+      <!--<p class="popup_welcome_content">价值￥<span>6000</span>优惠券</p>-->
+
+      <!--<div class="check_btn" @click="getCoupons">-->
+        <!--<button>即刻激活领取</button>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="box_shadow"></div>-->
+  <!--</div>-->
+
+<!--重阳节弹框-->
   <div class="active_box" >
-
+    
     <div class="main_box">
-      <div class="popup_logo_plate"><img src="../../../static/images/img_popup_logo.png"/></div>
-
+      <div class="popup_logo_plate"><img src="../../../static/images/img_popup_nine.png"/></div>
+  
       <p class="popup_welcome_font">嘉会员欢迎您</p>
-
-      <p class="popup_welcome_details">价值￥<span>6000</span>优惠券</p>
-
-      <p class="popup_welcome_content">价值￥<span>6000</span>优惠券</p>
-
+      
+      <p class="popup_welcome_content">价值<span>￥</span><span>6000</span>优惠券</p>
+      
       <div class="check_btn" @click="getCoupons">
         <button>即刻激活领取</button>
       </div>
     </div>
-
+    
     <div class="box_shadow"></div>
   </div>
-
-
+  
 </template>
 
 
