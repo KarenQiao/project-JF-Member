@@ -25,7 +25,8 @@
     width: 65%;
     //height: calc(~'80vw*730/580');
     height: calc(~'65vw*667/520');
-    background: url("../images/img_jxmember_welcome.png")center no-repeat;
+    //background: url("../images/img_jxmember_welcome.png")center no-repeat;
+    background: url("../images/img_jxmember_nine.png") center no-repeat;
     background-size: 100%;
     z-index: 1000;
     transform:scale(0.8);
@@ -45,10 +46,14 @@
 
     .check_btn{
 
-      width: 70%;
+      //width: 70%;
+      //position: absolute;
+      //bottom: 60px;
+      //left: 15%;
+      width: 80%;
       position: absolute;
-      bottom: 60px;
-      left: 15%;
+      bottom: 80px;
+      left: 10%;
 
       @media (max-width: 320px) {
         bottom: 50px;
@@ -58,13 +63,15 @@
         width: 100%;
         text-align: center;
         padding: 10px 0;
-        color: #000000;
-        background: linear-gradient(to right,#f1eca8,#c8a662);
-        border-radius: 4px;
+        //color: #000000;
+        color: #fff;
+        //background: linear-gradient(to right,#f1eca8,#c8a662);
+        background-color: #a0744a;
+        //border-radius: 4px;
         border: none;
         outline: 0;
         font-size: 16px;
-        box-shadow: 0 5px 5px -5px #000000;
+        //box-shadow: 0 5px 5px -5px #000000;
       }
     }
   }
@@ -73,7 +80,8 @@
 
 .popup_logo_plate {
   position: absolute;
-  top: 5%;
+  //top: 5%;
+  top: 13%;
   left: 41%;
   width: 40px;
   height: 40px;
@@ -87,10 +95,16 @@
 
 .popup_welcome_font {
   text-align: center;
-  margin-top: 30%;
-  color: #eed894;
-  font-size: 18px;
-  text-shadow: 0 2px 0 #000000;
+  //margin-top: 30%;
+  //color: #eed894;
+  color: #a0744a;
+  margin-top: 36%;
+  //font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  //text-shadow: 0 2px 0 #000000;
+
 
   @media (max-width: 320px) {
     font-size: 16px;
@@ -98,37 +112,43 @@
 
 }
 
-.popup_welcome_details {
-  font-size: 20px;
-  position: absolute;
-  top: 45%;
-  text-shadow: 0 3px 0 #000000;
-  text-align: center;
-  width: 100%;
+//.popup_welcome_details {
+//  font-size: 20px;
+//  position: absolute;
+//  //top: 45%;
+//  top: 42%;
+//  letter-spacing: 2px;
+//  //text-shadow: 0 3px 0 #000000;
+//
+//  text-align: center;
+//  width: 100%;
+//
+//  @media (max-width: 320px) {
+//    font-size: 18px;
+//    top: 44%;
+//  }
+//
+//  span {
+//    font-size: 32px;
+//
+//    @media (max-width: 320px) {
+//      font-size: 28px;
+//    }
+//
+//  }
 
-  @media (max-width: 320px) {
-    font-size: 18px;
-    top: 44%;
-  }
-
-  span {
-    font-size: 32px;
-
-    @media (max-width: 320px) {
-      font-size: 28px;
-    }
-
-  }
-
-}
+//}
 
 .popup_welcome_content {
   font-size: 20px;
-  background: linear-gradient(to right, #bb9966, #f1eca8, #bb9966);
+  color: #a0744a;
+  //background: linear-gradient(to right, #bb9966, #f1eca8, #bb9966);
   -webkit-background-clip: text;
-  color: transparent;
+  //color: transparent;
   position: absolute;
-  top: 45%;
+  //top: 45%;
+  letter-spacing: 2px;
+  top: 42%;
   z-index: 1;
   text-align: center;
   width: 100%;
@@ -137,9 +157,12 @@
     font-size: 18px;
     top: 44%;
   }
-
+  span:first-child{
+    font-size: 20px;
+  }
   span {
     font-size: 32px;
+    color: rgb(201,39,48);
 
     @media (max-width: 320px) {
       font-size: 28px;
