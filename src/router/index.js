@@ -337,7 +337,7 @@ export default new Router({
     },
 
     {
-      path:'/doubleNinthFestival',
+      path:'/doubleNinthFestival/:id',
       name:'嘉会员重阳节',
       meta:{
         title:'嘉会员重阳节'
@@ -346,7 +346,7 @@ export default new Router({
 
     },
     {
-      path:'/nineNine',
+      path:'/nineNine/:id',
       name:'主编推荐-重阳节',
       meta:{
         title:'主编推荐-重阳节'

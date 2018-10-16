@@ -5,7 +5,7 @@
       <img src="../../../static/images/festival/img_festival_top.png"/>
     </div>
 
-    <a class="img_festival_first" @click="$router.push('/electronicCard')">
+    <a class="img_festival_first"  href="#/electronicCard">
       <img src="../../../static/images/festival/img_festival_01.png"/>
     </a>
 
