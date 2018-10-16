@@ -114,10 +114,15 @@
           if (res.data.code == '00000') {
             console.log(res);
 
+            let str=encodeURI('?'+'content='+res.data.data.content+'&sender='+res.data.data.sender+'&addresser='+res.data.data.addresser+'&time='+res.data.data.time);
 
-            let thisUrl=res.data.data.url+'?'+'content='+res.data.data.content+'&sender='+res.data.data.sender+'&addresser'+res.data.data.addresser+'&time='+res.data.data.time;
+            console.log(str)
 
-            //window.location=thisUrl;
+          //  console.log(decodeURI(str));
+
+            let thisUrl=res.data.data.url+str;
+
+            window.location=thisUrl;
           }
 
         }.bind(this))
