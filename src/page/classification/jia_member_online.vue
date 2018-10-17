@@ -4,13 +4,15 @@
 
     <div class="menber_online_banner"></div>
 
+    <a class="menber_online_bannerbottom" @click="$router.push('/doubleNinthFestival/8878666577543168')"></a>
+
     <!--优惠券-->
     <div class="member_online_plate">
 
       <div class="card_top_font">
         <p>消费满减券</p>
       </div>
-  
+
       <div class="youhui_card">
 
         <div class="card_left">
