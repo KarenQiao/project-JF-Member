@@ -4,7 +4,7 @@
 
     <div class="menber_online_banner"></div>
 
-    <a class="menber_online_bannerbottom" @click="$router.push('/doubleNinthFestival/8878666577543168')"></a>
+    <a class="menber_online_bannerbottom" @click="$router.push('/doubleNinthFestival/8879311125872640')"></a>
 
     <!--优惠券-->
     <div class="member_online_plate">
