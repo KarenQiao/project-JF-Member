@@ -56,13 +56,15 @@
         },1500);
 
         return false
-      }else if(window.location.href.includes('mobileNo')){
+      }else if(window.location.href.includes('mobile')){
 
         this.mobileNo=window.location.href.split('?')[1].split('&')[0].slice(7);
 
         this.geid=window.location.href.split('?')[1].split('&')[2].slice(5);
 
-        if(window.location.href.includes('password')){
+        console.log(window.location.href.includes('password'))
+
+        if(window.location.href.includes('password')){//默认登录
 
           this.loginPasd=window.location.href.split('?')[1].split('&')[1].slice(9);
 
@@ -70,25 +72,67 @@
 
         }else {
 
+          console.log('默认注册')
+
           this.guid=window.location.href.split('?')[1].split('&')[1].slice(5);
 
-          localStorage.setItem('mobileNo',this.mobileNo);
+          let params = {
 
-          localStorage.setItem('geid',this.geid);
+            mobileNo: this.mobileNo,
 
-          localStorage.setItem('guid',this.guid);
+            password: '666666',
 
-          setTimeout(function () {
+            rePassword: '666666',
 
-            _this.$router.push('/setpasd')
+            guid: this.guid,
 
-          },1500)
+            geid:this.geid
+
+          };
+
+          API.postFn(API.setPasd,params)
+
+            .then(function (res) {
+
+              if(res.data.code=='00000'){
+
+              //  jfShowTips.toastShow({'text':'设置成功'});
+
+                localStorage.setItem('userData',JSON.stringify(res.data.data));
+
+                localStorage.setItem('firstLogin',res.data.data.firstLogin);
+
+                localStorage.setItem('userToken',res.data.data.sessionKey);
+
+                var _this=this;
+
+                setTimeout(function () {
+
+                  _this.$router.push('/homepage')
+
+                },1500)
+
+
+              }else {
+
+                jfShowTips.toastShow({'text':res.data.message});
+
+                return false
+              }
+
+
+
+            }.bind(this))
+            .catch(function (error) {
+
+            }.bind(this))
 
         }
 
         return false
 
       }else {
+
         setTimeout(function () {
 
           _this.$router.push('/login')

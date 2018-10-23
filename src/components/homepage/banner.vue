@@ -8,7 +8,7 @@
         <wc-slide v-for="(item,key) in bannerList" :key="key">
 
           <a :href="item.linkActivity">
-            <img v-lazy="item.showPicturUrl">d
+            <img v-lazy="item.showPicturUrl">
           </a>
         </wc-slide>
 
