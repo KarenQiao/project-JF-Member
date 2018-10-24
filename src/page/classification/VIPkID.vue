@@ -24,7 +24,9 @@
       </select>
 
       <input type="text" class="name_input" placeholder="请输入申请人姓名" value="" v-model="parentName"/>
-
+      <input type="tel" class="name_input" placeholder="请输入联系人电话" value="" v-model="parentNum" maxlength="11"/>
+  
+  
       <label class="checkbox_font">
         <input class="vip_element_radio" type="checkbox" name="radio" v-model="checked">
 
@@ -53,7 +55,14 @@
       <div class="receive_popup"></div>
 
       <div class="success_popup_plate">
-        <div class="img_popup_plate"><img src="../../../static/images/vip_English_img/img_receive_success.png"/></div>
+        <div class="img_popup_plate">
+          <div class="img_popup_peolple">
+            <p class="img_popup_name">获赠人姓名：<span>{{this.parentName}}</span> </p>
+            <p class="img_popup_name">联系人手机：<span>{{this.parentNum}}</span></p>
+            <p class="img_popup_text">请耐心等待，VIPKID客服将电话和您联系！</p>
+          </div>
+          <img src="../../../static/images/vip_English_img/img_receive_success01.png"/>
+        </div>
 
         <div class="close_popup_btn" @click="hidePopup()"><img src="../../../static/images/vip_English_img/icon_receive_delete.png"/></div>
       </div>
@@ -84,7 +93,9 @@
 
         parentName:'',
 
-        checked:false
+        checked:false,
+  
+        parentNum:''
       }
     },
 
@@ -95,11 +106,14 @@
       this.userID=userData.userId;
 
       this.mobile=userData.mobileNo;
+      
+      this.parentNum = userData.mobile;
     },
 
     methods:{
 
       submitFn(){
+        let reg=/^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
 
         if(this.kidAge==''){
 
@@ -120,7 +134,19 @@
 
           return false
 
-        } else if(!this.checked){
+        }else if(this.parentNum==''){
+  
+          jfShowTips.toastShow({'text':'请输入联系人电话'});
+  
+          return false
+  
+        }else if(!reg.test(this.parentNum)){
+  
+          jfShowTips.toastShow({'text':'请输入正确的手机号'});
+  
+          return false;
+  
+        }else if(!this.checked){
 
           jfShowTips.toastShow({'text':'请同意相关协议'});
 
@@ -137,7 +163,9 @@
 
           kidAge:this.kidAge,
 
-          parentName:this.parentName
+          parentName:this.parentName,
+  
+          parentNum: this.parentNum
 
         }
 

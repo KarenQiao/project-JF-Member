@@ -196,12 +196,32 @@
 
 .img_popup_plate {
   width: 248px;
-  height: 267px;
+  height: 320px;
   margin: 0 auto;
-
+  background-color: #fff;
+  border-radius: 8px;
+  position: relative;
+  .img_popup_peolple{
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    color: #8a8a8a;
+    font-size: 12px;
+    line-height: 20px;
+    .img_popup_name{
+      letter-spacing: 1px;
+      span{
+        padding-left: 5px;
+        color: #4a4a4a;
+      }
+    }
+    .img_popup_text{
+      color: #c1c1c1;
+      line-height: 45px;
+    }
+  }
   img {
     width: 100%;
-    height: 100%;
   }
 
 }
