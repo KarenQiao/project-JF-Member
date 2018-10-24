@@ -24,7 +24,7 @@
       </select>
 
       <input type="text" class="name_input" placeholder="请输入申请人姓名" value="" v-model="parentName"/>
-      <input type="tel" class="name_input" placeholder="请输入联系人电话" value="" v-model="parentNum" maxlength="11"/>
+      <input type="tel" class="name_input" placeholder="请输入联系人电话" value="" v-model="mobile" maxlength="11"/>
   
   
       <label class="checkbox_font">
@@ -58,7 +58,7 @@
         <div class="img_popup_plate">
           <div class="img_popup_peolple">
             <p class="img_popup_name">获赠人姓名：<span>{{this.parentName}}</span> </p>
-            <p class="img_popup_name">联系人手机：<span>{{this.parentNum}}</span></p>
+            <p class="img_popup_name">联系人手机：<span>{{this.mobile}}</span></p>
             <p class="img_popup_text">请耐心等待，VIPKID客服将电话和您联系！</p>
           </div>
           <img src="../../../static/images/vip_English_img/img_receive_success01.png"/>
@@ -95,7 +95,6 @@
 
         checked:false,
   
-        parentNum:''
       }
     },
 
@@ -105,9 +104,8 @@
 
       this.userID=userData.userId;
 
-      this.mobile=userData.mobileNo;
+      this.mobile='';
       
-      this.parentNum = userData.mobile;
     },
 
     methods:{
@@ -134,13 +132,13 @@
 
           return false
 
-        }else if(this.parentNum==''){
+        }else if(this.mobile==''){
   
           jfShowTips.toastShow({'text':'请输入联系人电话'});
   
           return false
   
-        }else if(!reg.test(this.parentNum)){
+        }else if(!reg.test(this.mobile)){
   
           jfShowTips.toastShow({'text':'请输入正确的手机号'});
   
@@ -165,7 +163,7 @@
 
           parentName:this.parentName,
   
-          parentNum: this.parentNum
+          // parentNum: this.parentNum
 
         }
 
